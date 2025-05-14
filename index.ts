@@ -1,4 +1,5 @@
 // Imports
+import * as api from "./api";
 import * as except from "./except";
 import * as log from "./log";
 import * as project from "./project";
@@ -10,12 +11,9 @@ const server = Bun.serve({
     fetch: async (request: Request): Promise<Response> => {
         // Handles fetch
         try {
-            // Handles inbound
-            log.inbound(request);
-
-            // Handles outbound
+            // Handles access
             const response = router.handle(request, server);
-            log.outbound(response);
+            log.access(request, response, server);
             return response;
         }
         catch(error) {
@@ -24,7 +22,7 @@ const server = Bun.serve({
             else if(error instanceof Error) log.error(error);
             else log.error(new Error(String(error)));
 
-            // Handles outbound
+            // Handles access
             const exception = error instanceof except.Exception ?
                 error :
                 except.exceptions.UNKNOWN_EXCEPTION;
@@ -32,10 +30,10 @@ const server = Bun.serve({
                 code: exception.code,
                 message: exception.message
             }, exception.status);
-            log.outbound(response);
+            log.access(request, response, server);
             return response;
         }
     },
     port: project.port
 });
-log.server(server);
+log.listen(server);
