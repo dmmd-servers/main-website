@@ -22,6 +22,7 @@ export const server = Bun.serve({
                 
                 // Resolves route
                 const response = await route.resolve(request, server);
+                if(response === null) continue;
                 audit.logFetch(request, response, server);
                 return response;
             }
