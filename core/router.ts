@@ -11,4 +11,10 @@ export type Route = {
     resolve: Resolve;
 };
 export const routes: Route[] = [
+    {
+        pattern: "/",
+        resolve: (request) => {
+            return new Response("Hello, world!");
+        }
+    }
 ];

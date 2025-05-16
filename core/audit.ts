@@ -30,7 +30,19 @@ export function logServer(server: Bun.Server): void {
     Bun.stdout.write(message);
 }
 export function logFetch(request: Request, response: Response, server: Bun.Server): void {
-
+    // Parses request
+    const url = new URL(request.url);
+    const address = request.headers.get("CF-Connecting-IP") ??
+        server.requestIP(request)?.address ??
+        "unknown";
+    
+    // Formats message
+    const ip = chalk.cyan(address);
+    const endpoint = chalk.cyan(`${request.method} ${url.pathname + url.search}`);
+    const status = chalk.cyan(response.status);
+    const body = `${ip} accessed ${endpoint} with status ${status}. (${response.ok ? "OK" : "FAILED"})`;
+    const message = formatMessage("FETCH", body, response.ok ? chalk.green : chalk.red);
+    Bun.stdout.write(message);
 }
 export function logException(exception: except.Exception): void {
     // Logs message
