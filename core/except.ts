@@ -29,7 +29,7 @@ export class UnauthorizedToken extends Exception {
     readonly status = 401;
 }
 export class UnknownEndpoint extends Exception {
-    // Definse fields
+    // Defines fields
     readonly code = "UNKNOWN_ENDPOINT";
     readonly message = "The endpoint that you requested does not exist.";
     readonly status = 404;
