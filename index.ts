@@ -1,7 +1,7 @@
 // Imports
 import * as api from "./api";
 import * as except from "./except";
-import * as log from "./log";
+import * as log from "./core/audit";
 import * as project from "./project";
 import * as router from "./router";
 
