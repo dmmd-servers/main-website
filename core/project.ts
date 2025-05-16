@@ -2,6 +2,7 @@
 import nodePath from "node:path";
 
 // Defines constants
+export const bunsvr = await import("../package.json");
 export const root = nodePath.resolve(import.meta.dir, "../");
 
 // Defines environment
