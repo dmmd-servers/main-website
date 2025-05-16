@@ -2,7 +2,7 @@
 import chalk from "chalk";
 import type * as except from "./except";
 
-// Defines audit methods
+// Defines formatters
 export function formatMessage(head: string, body: string, style: typeof chalk): string {
     // Creates stamp
     const date = new Date();
@@ -17,7 +17,7 @@ export function formatMessage(head: string, body: string, style: typeof chalk): 
     return message;
 }
 
-// Defines log methods
+// Defines loggers
 export function logServer(server: Bun.Server): void {
     // Logs message
     const url = chalk.cyan(
@@ -29,7 +29,7 @@ export function logServer(server: Bun.Server): void {
     const message = formatMessage("START", body, chalk.green);
     Bun.stdout.write(message);
 }
-export function logFetch(server: Bun.Server, request: Request, response: Response): void {
+export function logFetch(request: Request, response: Response, server: Bun.Server): void {
 
 }
 export function logException(exception: except.Exception): void {
