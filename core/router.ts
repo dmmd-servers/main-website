@@ -1,5 +1,6 @@
 // Imports
 import nodePath from "node:path";
+import * as except from "./except";
 import * as project from "./project";
 
 // Defines routes
@@ -26,6 +27,27 @@ export const routes: Route[] = [
             // Resolves assets
             const url = new URL(request.url);
             const dirpath = nodePath.resolve(project.root, "./assets/");
+            const filepath = nodePath.resolve(dirpath, url.pathname.split("/").slice(2).join("/"));
+            if(!filepath.startsWith(dirpath)) return null;
+            const file = Bun.file(filepath);
+            if(!(await file.exists())) return null;
+            return new Response(file);
+        }
+    },
+    {
+        pattern: /^\/secrets\/*/,
+        resolve: async (request) => {
+            // Authorizes token
+            if(project.token.length !== 0) {
+                const authorization = request.headers.get("Authorization");
+                if(authorization === null) throw new except.UnauthorizedToken();
+                const match = authorization.match(/^Basic (.+)$/);
+                if(match === null || match[1] !== project.token) throw new except.UnauthorizedToken();
+            }
+
+            // Resolves secrets
+            const url = new URL(request.url);
+            const dirpath = nodePath.resolve(project.root, "./secrets/");
             const filepath = nodePath.resolve(dirpath, url.pathname.split("/").slice(2).join("/"));
             if(!filepath.startsWith(dirpath)) return null;
             const file = Bun.file(filepath);

@@ -22,6 +22,12 @@ export class DebugException extends Exception {
         this.message = message;
     }
 }
+export class UnauthorizedToken extends Exception {
+    // Defines fields
+    readonly code = "UNAUTHORIZED_TOKEN";
+    readonly message = "The token provided is not authorized.";
+    readonly status = 401;
+}
 export class UnknownException extends Exception {
     // Defines fields
     readonly code = "UNKNOWN_EXCEPTION";
