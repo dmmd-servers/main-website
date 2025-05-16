@@ -7,6 +7,21 @@ export abstract class Exception extends Error {
 }
 
 // Defines exceptions
+export class DebugException extends Exception {
+    // Defines and declares fields
+    readonly code = "DEBUG_EXCEPTION";
+    readonly message: string;
+    readonly status = 500;
+
+    // Defines constructor
+    constructor(message: string) {
+        // Initializes parent
+        super();
+
+        // Initializes fields
+        this.message = message;
+    }
+}
 export class UnknownException extends Exception {
     // Defines fields
     readonly code = "UNKNOWN_EXCEPTION";

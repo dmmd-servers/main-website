@@ -14,12 +14,11 @@ export const server = Bun.serve({
             const url = new URL(request.url);
             for(let i = 0; i < router.routes.length; i++) {
                 // Matches route
-                const route = router.routes[i];
-                if(typeof route === "undefined") continue;
-                const match = typeof route.pattern === "string" ?
+                const route = router.routes[i]!;
+                const matched = typeof route.pattern === "string" ?
                     route.pattern === url.pathname :
                     route.pattern.test(url.pathname);
-                if(!match) continue;
+                if(!matched) continue;
                 
                 // Resolves route
                 const response = await route.resolve(request, server);
@@ -28,16 +27,22 @@ export const server = Bun.serve({
             }
             throw new except.UnknownEndpoint();
         }
-        catch(error) {
+        catch(thrown) {
             // Handles exception
-            const exception = error instanceof except.Exception ? error : new except.UnknownException();
+            const error = thrown instanceof Error ?
+                thrown :
+                new Error(String(thrown));
+            const exception = thrown instanceof except.Exception ?
+                thrown :
+                project.debug ?
+                    new except.DebugException(error.message) :
+                    new except.UnknownException();
             const response = Response.json({
                 code: exception.code,
                 message: exception.message
             }, exception.status);
-            if(error instanceof except.Exception) audit.logException(exception); 
-            else if(error instanceof Error) audit.logError(error);
-            else audit.logError(new Error(String(error)));
+            if(thrown instanceof except.Exception) audit.logException(exception); 
+            else audit.logError(error);
             audit.logFetch(request, response, server);
             return response;
         }
