@@ -1,5 +1,6 @@
 // Imports
 import nodePath from "node:path";
+import * as audit from "./audit";
 import * as except from "./except";
 import * as project from "./project";
 
@@ -18,6 +19,7 @@ export const routes: Route[] = [
             const filepath = nodePath.resolve(project.root, "./assets/html/index.html");
             const file = Bun.file(filepath);
             if(!(await file.exists())) return null;
+            audit.logMessage("Hello, world!");
             return new Response(file);
         }
     },
