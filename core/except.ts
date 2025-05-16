@@ -28,15 +28,15 @@ export class UnauthorizedToken extends Exception {
     readonly message = "The token provided is not authorized.";
     readonly status = 401;
 }
-export class UnknownException extends Exception {
-    // Defines fields
-    readonly code = "UNKNOWN_EXCEPTION";
-    readonly message = "An unknown exception has occurred.";
-    readonly status = 500;
-}
 export class UnknownEndpoint extends Exception {
     // Definse fields
     readonly code = "UNKNOWN_ENDPOINT";
     readonly message = "The endpoint that you requested does not exist.";
     readonly status = 404;
+}
+export class UnknownException extends Exception {
+    // Defines fields
+    readonly code = "UNKNOWN_EXCEPTION";
+    readonly message = "An unknown exception has occurred.";
+    readonly status = 500;
 }

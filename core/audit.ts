@@ -18,15 +18,21 @@ export function formatMessage(head: string, body: string, style: typeof chalk): 
 }
 
 // Defines loggers
-export function logServer(server: Bun.Server): void {
+export function logMessage(body: string): void {
     // Logs message
-    const url = chalk.cyan(
-        typeof server.port === "number" ?
-            `http://localhost:${String(server.port)}` :
-            "localhost"
-    );
-    const body = `Server is listening on ${url}.`;
-    const message = formatMessage("START", body, chalk.green);
+    const message = formatMessage("MESSAGE", body, chalk.white);
+    Bun.stdout.write(message);
+}
+export function logError(error: Error): void {
+    // Logs message
+    const body = `${error.message}`;
+    const message = formatMessage("ERROR", body, chalk.red);
+    Bun.stdout.write(message);
+}
+export function logException(exception: except.Exception): void {
+    // Logs message
+    const body = `${exception.message} (${exception.code} ${String(exception.status)})`;
+    const message = formatMessage("EXCEPTION", body, chalk.red);
     Bun.stdout.write(message);
 }
 export function logFetch(request: Request, response: Response, server: Bun.Server): void {
@@ -36,7 +42,7 @@ export function logFetch(request: Request, response: Response, server: Bun.Serve
         server.requestIP(request)?.address ??
         "unknown";
     
-    // Formats message
+    // Logs message
     const ip = chalk.cyan(address);
     const endpoint = chalk.cyan(`${request.method} ${url.pathname + url.search}`);
     const status = chalk.cyan(response.status);
@@ -44,15 +50,14 @@ export function logFetch(request: Request, response: Response, server: Bun.Serve
     const message = formatMessage("FETCH", body, response.ok ? chalk.green : chalk.red);
     Bun.stdout.write(message);
 }
-export function logException(exception: except.Exception): void {
+export function logServer(server: Bun.Server): void {
     // Logs message
-    const body = `${exception.message} (${exception.code} ${String(exception.status)})`;
-    const message = formatMessage("EXCEPTION", body, chalk.red);
-    Bun.stdout.write(message);
-}
-export function logError(error: Error): void {
-    // Logs message
-    const body = `${error.message}`;
-    const message = formatMessage("ERROR", body, chalk.red);
+    const url = chalk.cyan(
+        typeof server.port === "number" ?
+            `http://localhost:${String(server.port)}` :
+            "localhost"
+    );
+    const body = `Server is listening on ${url}.`;
+    const message = formatMessage("START", body, chalk.green);
     Bun.stdout.write(message);
 }
