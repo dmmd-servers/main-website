@@ -40,6 +40,8 @@ export const routes: Route[] = [
         pattern: /^\/secrets\/*/,
         resolve: async (request) => {
             // Authorizes token
+            // I'm probably abusing this.
+            // Someone please help me fix this, kthxbai.
             if(project.token.length !== 0) {
                 const authorization = request.headers.get("Authorization");
                 if(authorization === null) throw new except.UnauthorizedToken();
