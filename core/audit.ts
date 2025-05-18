@@ -50,7 +50,7 @@ export function logFetch(request: Request, response: Response, server: Bun.Serve
     const message = formatMessage("FETCH", body, response.ok ? chalk.green : chalk.red);
     Bun.stdout.write(message);
 }
-export function logServer(server: Bun.Server): void {
+export function logListen(server: Bun.Server): void {
     // Logs message
     const url = chalk.cyan(
         typeof server.port === "number" ?
