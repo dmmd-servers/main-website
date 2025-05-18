@@ -62,9 +62,9 @@ export const routes: Route[] = [
     {
         pattern: /^\/*/,
         resolve: async (request) => {
-            // Resolves public
+            // Resolves static
             const url = new URL(request.url);
-            const dirpath = nodePath.resolve(project.root, "./public/");
+            const dirpath = nodePath.resolve(project.root, "./static/");
             const filepath = nodePath.resolve(dirpath, url.pathname.split("/").slice(1).join("/"));
             if(!filepath.startsWith(dirpath)) return null;
             const file = Bun.file(filepath);
