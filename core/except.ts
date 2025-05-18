@@ -15,10 +15,8 @@ export class DebugException extends Exception {
 
     // Defines constructor
     constructor(message: string) {
-        // Initializes parent
+        // Initializes instance
         super();
-
-        // Initializes fields
         this.message = message;
     }
 }
