@@ -68,6 +68,7 @@ export const routes: Route[] = [
             const filepath = nodePath.resolve(dirpath, url.pathname.split("/").slice(1).join("/"));
             if(!filepath.startsWith(dirpath)) return null;
             const file = Bun.file(filepath);
+            
             if(!(await file.exists())) return null;
             return new Response(file);
         }

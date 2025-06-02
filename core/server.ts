@@ -1,55 +1,106 @@
 // Imports
-import * as audit from "./audit";
-import * as except from "./except";
-import * as project from "./project";
-import * as router from "./router";
+import chalk from "chalk";
+import Audit from "./audit";
+import Fault from "./fault";
+import Panic from "./panic";
+import Route from "./route";
+import EndpointNotFoundFault from "../faults/EndpointNotFoundFault";
+import ServerAlreadyOnlinePanic from "../panics/ServerAlreadyOnlinePanic";
+import ServerNotOnlinePanic from "../panics/ServerNotOnlinePanic";
+import ServerFault from "../faults/ServerFault";
 
-// Defines server
-export const server = Bun.serve({
-    development: project.debug,
-    fetch: async (request: Request): Promise<Response> => {
-        // Handles fetch
+// Defines server class
+export class Server {
+    // Defines constructor
+    private _core: Bun.Server | null = null;
+    readonly audit: Audit;
+    readonly port: number;
+    readonly registry: Route[];
+    constructor(
+        port: number,
+        audit: Audit = new Audit(),
+        routes: Route[] = []
+    ) {
+        // Initializes class
+        this._core = null;
+        this.audit = audit;
+        this.port = port;
+        this.registry = routes;
+    }
+
+    // Defines registry handlers
+    register(route: Route): boolean {
+        // Registers route
+        this.registry.push(route);
+        return true;
+    }
+    unregister(route: Route): boolean {
+        // Unregisters route
+        const index = this.registry.indexOf(route);
+        if(index === -1) return false;
+        this.registry.splice(index, 1);
+        return true;
+    }
+
+    // Defines fetcher
+    async fetch(request: Request): Promise<Response> {
+        // Fetches request
+        if(this._core === null) throw new ServerNotOnlinePanic();
         try {
-            // Handles route
-            const url = new URL(request.url);
-            for(let i = 0; i < router.routes.length; i++) {
-                // Matches route
-                const route = router.routes[i]!;
-                const matched = typeof route.pattern === "function" ?
-                    await route.pattern(request, server) :
-                    typeof route.pattern === "string" ?
-                        route.pattern === url.pathname :
-                        route.pattern.test(url.pathname);
-                if(!matched) continue;
-                
-                // Resolves route
-                const response = await route.resolve(request, server);
-                if(response === null) continue;
-                audit.logFetch(request, response, server);
-                return response;
-            }
-            throw new except.UnknownEndpoint();
-        }
-        catch(thrown) {
-            // Handles exception
-            const error = thrown instanceof Error ?
-                thrown :
-                new Error(String(thrown));
-            const exception = thrown instanceof except.Exception ?
-                thrown :
-                project.debug ?
-                    new except.DebugException(error.message) :
-                    new except.UnknownException();
-            const response = Response.json({
-                code: exception.code,
-                message: exception.message
-            }, exception.status);
-            if(thrown instanceof except.Exception) audit.logException(exception); 
-            else audit.logError(error);
-            audit.logFetch(request, response, server);
+            // Resolves request
+            const route = this.registry.find(async (route) => await route.match(request, this));
+            if(typeof route === "undefined") throw new EndpointNotFoundFault();
+            const response = await route.resolve(request, this);
+            this.audit.logFetch(request, response, this._core);
             return response;
         }
-    },
-    port: project.port
-});
-audit.logListen(server);
+        catch(thrown) {
+            // Handles thrown
+            const fault = thrown instanceof Fault ? thrown : new ServerFault();
+            const response = Response.json({
+                code: fault.code,
+                message: fault.message,
+            }, fault.status);
+            if(thrown instanceof Fault) this.audit.logFault(thrown);
+            else if(thrown instanceof Panic) this.audit.logPanic(thrown);
+            else if(thrown instanceof Error) this.audit.logError(thrown);
+            else this.audit.logError(new Error(String(thrown)));
+            this.audit.logFetch(request, response, this._core);
+            return response;
+        }
+    }
+
+    // Defines controllers
+    async start(): Promise<void> {
+        // Starts server
+        if(this._core !== null) throw new ServerAlreadyOnlinePanic();
+        this._core = Bun.serve({
+            development: false,
+            fetch: async (request) => this.fetch(request),
+            port: this.port
+        });
+
+        // Logs status
+        const url = `http://localhost:${this.port}/`;
+        this.audit.logRaw("SERVER", `Server is now listening on ${chalk.cyan(url)}.`, chalk.green);
+    }
+    async stop(): Promise<void> {
+        // Stops server
+        if(this._core === null) throw new ServerNotOnlinePanic();
+        await this._core.stop();
+        this._core = null;
+
+        // Logs status
+        const url = `http://localhost:${this.port}/`;
+        this.audit.logRaw("SERVER", `Server gracefully shutdown from ${chalk.cyan(url)}.`, chalk.green);
+    }
+
+    // Defines properties
+    get core() {
+        // Returns core
+        return this._core;
+    }
+}
+
+// Exports
+export default Server;
