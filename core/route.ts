@@ -3,8 +3,10 @@ import type Server from "./server";
 
 // Defines route class
 export abstract class Route {
-    // Defines constructor
+    // Defines matcher
     abstract match(request: Request, server: Server): Promise<boolean>;
+
+    // Defines resolver
     abstract resolve(request: Request, server: Server): Promise<Response>;
 }
 

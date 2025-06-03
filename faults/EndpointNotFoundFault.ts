@@ -2,7 +2,7 @@
 import Fault from "../core/fault";
 
 // Defines fault class
-export class EndpointNotFound extends Fault {
+export class EndpointNotFoundFault extends Fault {
     // Defines constructor
     readonly code: string = "ENDPOINT_NOT_FOUND_FAULT";
     readonly message: string = "Unknown endpoint.";
@@ -10,4 +10,4 @@ export class EndpointNotFound extends Fault {
 }
 
 // Exports
-export default EndpointNotFound;
+export default EndpointNotFoundFault;

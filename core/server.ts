@@ -48,11 +48,23 @@ export class Server {
         if(this._core === null) throw new ServerNotOnlinePanic();
         try {
             // Resolves request
-            const route = this.registry.find(async (route) => await route.match(request, this));
-            if(typeof route === "undefined") throw new EndpointNotFoundFault();
-            const response = await route.resolve(request, this);
-            this.audit.logFetch(request, response, this._core);
-            return response;
+            for(let i = 0; i < this.registry.length; i++) {
+                const route = this.registry[i]!;
+                if(!(await route.match(request, this))) continue;
+                try {
+                    const route = this.registry.find(async (route) => await route.match(request, this));
+                    console.log(route);
+                    if(typeof route === "undefined") throw new EndpointNotFoundFault();
+                    console.log(route, "i found a route");
+                    const response = await route.resolve(request, this);
+                    console.log(response);
+                    this.audit.logFetch(request, response, this._core);
+                    return response;
+                }
+                catch(thrown) {
+
+                }
+            }
         }
         catch(thrown) {
             // Handles thrown
