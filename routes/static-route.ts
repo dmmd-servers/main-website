@@ -17,13 +17,13 @@ export async function staticRoute(request: Request, server: Bun.Server): Promise
         // Resolves asset
         const filepath = nodePath.resolve(project.rootPath, "./static/", target[1]!);
         const stat = await nodeFile.stat(filepath);
-        if(!stat.isFile()) throw new NoEndpointFault();
+        if(!stat.isFile()) throw new AbortFault();
         const file = Bun.file(filepath);
         return new Response(file);
     }
     catch {
         // Throws fault
-        throw new NoEndpointFault();
+        throw new AbortFault();
     }
 }
 
