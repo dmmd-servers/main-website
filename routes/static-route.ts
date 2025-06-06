@@ -3,7 +3,6 @@ import nodeFile from "node:fs/promises";
 import nodePath from "node:path";
 import * as project from "../core/project";
 import AbortFault from "../faults/abort-fault";
-import NoEndpointFault from "../faults/no-endpoint-fault";
 
 // Defines static route function
 export async function staticRoute(request: Request, server: Bun.Server): Promise<Response> {
