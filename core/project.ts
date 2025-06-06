@@ -1,5 +1,8 @@
 // Imports
 import nodePath from "node:path";
 
-// Defines paths
-export const root = nodePath.resolve(import.meta.dir, "../");
+// Defines root
+export const rootPath = nodePath.resolve(import.meta.dir, "../");
+
+// Defines env
+export const port = +(process.env.PORT ?? "3000");

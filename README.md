@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-A template repository for all of my Bun web servers.
+A small template repository for all of my Bun web servers.
 
 ## Installation
 
@@ -21,20 +21,14 @@ bun .
 ## Configuration
 
 ```.env
-# Enables debug mode for development
-DEBUG=FALSE
-
 # Server port
 PORT=3000
-
-# Simple server token for basic authorization
-TOKEN=admin
 ```
 
 ## Contribution
 
-Active contributions are welcome. It is, afterall, only meant to be a relatively simple template, so don't expect anything glorious from this repository.
+Active contributions are welcome. Don't expect anything glorious from this repository though.
 
 ---
 
-###### Last Updated: May 16th, 2025, 11:46 PM EST.
+###### Last Updated: June 6th, 2025, 12:15 AM EST.

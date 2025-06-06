@@ -1,5 +1,5 @@
-// Defines fault class
-export abstract class Fault extends Error {
+// Defines generic fault class
+export abstract class GenericFault extends Error {
     // Defines constructor
     abstract readonly code: string;
     abstract readonly message: string;
@@ -8,4 +8,4 @@ export abstract class Fault extends Error {
 }
 
 // Exports
-export default Fault;
+export default GenericFault;
