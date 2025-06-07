@@ -1,2 +1,2 @@
 // Defines constants
-export const version = "1.1.3";
+export const version = "1.1.4";
