@@ -1,0 +1,20 @@
+/* Message */
+#message {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0px;
+    justify-content: center;
+    padding: 50px 100px;
+    text-align: center;
+}
+
+#shrug {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#message a {
+    color: var(--sd-blue-700);
+    padding: 50px 0px;
+}

@@ -1,27 +1,68 @@
-/* Styles */
+/* Fonts */
+@font-face {
+    font-family: Oxygen;
+    src: url("https://static.dmmdgm.dev/file/fonts/oxygen/Oxygen-Regular.ttf");
+}
+
+/* Resets */
 html, body {
-    background-color: #1f1f1f;
+    background-color: var(--sd-mono-100);
     height: 100%;
-    margin: 0px;
     min-height: 100vh;
-    min-width: 100vw;
-    padding: 0px;
+    min-width: 100%;
     width: 100%;
 }
 
-main {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
-p {
-    color: #efefef;
+* {
+    color: var(--sd-mono-1000);
+    font-family: Oxygen;
     font-size: 15px;
+    margin: 0px;
+    padding: 0px;
 }
 
-img {
-    height: 35px;
+a {
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+a:hover {
+    opacity: 75%;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px clamp(50px, 10%, 100px);
+    justify-content: center;
+    padding: 25px 40px;
+}
+
+/* Footer */
+footer {    
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+    gap: 50px clamp(100px, 10%, 200px);
+    padding: 100px 40px;
+}
+
+@media screen and (max-width: 500px) {
+    footer {
+        flex-direction: column;
+    }
+}
+
+footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0px;
+}
+
+footer > div > span:first-child {
+    font-weight: bold;
+}
+
+footer > div a {
+    color: var(--sd-blue-700);
 }
