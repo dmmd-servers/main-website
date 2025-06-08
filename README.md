@@ -8,8 +8,8 @@ A small template repository for all of my Bun web servers.
 
 ```
 # Clone the repository
-git clone https://github.com/dmmd-web/bunsvr proj-name
-cd proj-name
+git clone https://github.com/DmmDGM/bunsvr my-project
+cd my-project
 
 # Install packages
 bun i
@@ -31,4 +31,4 @@ Active contributions are welcome. Don't expect anything glorious from this repos
 
 ---
 
-###### Last Updated: June 6th, 2025, 12:15 AM EST.
+###### Last Updated: June 7th, 2025, 8:02 PM EST.
