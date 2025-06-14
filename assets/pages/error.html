@@ -1,0 +1,53 @@
+<!-- Styles -->
+<style>
+    /* Message */
+    #message {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 15px 0px;
+        justify-content: center;
+        padding: 50px 100px;
+        text-align: center;
+    }
+
+    #shrug {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    #message a {
+        color: var(--sd-blue-700);
+        padding: 50px 0px;
+    }
+</style>
+
+<!-- Message -->
+<div id="message">
+    <span id="shrug">¯\_(ツ)_/¯</span>
+    <span id="quote">...</span>
+    <span>The page you were looking for either doesn't exist or failed to load.</span>
+    <a href="/">Back to Home Page</a>
+</div>
+
+<!-- Scripts -->
+<script>
+    // Executes script
+    void async function() {
+        // Defines quotes
+        const quotes = [
+            "No idea where you're heading...",
+            "How'd you get here?",
+            "Welp, I guess we're lost?",
+            "Yeah, no. This doesn't seem like the right place.",
+            "Oh well, the 'back' button is always available.",
+            "No clue what happened.",
+            "Something weird is going on.",
+            "Don't look at me, I don't know either.",
+            "Huh?"
+        ];
+        const element = document.getElementById("quote");
+        if(element === null) throw new Error("No quote field found.");
+        element.innerText = quotes[Math.floor(Math.random() * quotes.length)];
+    }();
+</script>

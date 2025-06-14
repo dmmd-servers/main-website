@@ -1,0 +1,157 @@
+<!-- Styles -->
+<style>
+    /* Bulletin */
+    #bulletin-view {
+        aspect-ratio: 16 / 9;
+        align-items: center;
+        display: flex;
+        gap: 0px 25px;
+        margin: auto;
+        max-height: 750px;
+        padding: 25px clamp(25px, 10%, 300px);
+        justify-content: center;
+    }
+
+    #bulletin-left, #bulletin-right {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 35px;
+        height: fit-content;
+        outline: none;
+        transition: opacity 0.2s ease;
+    }
+
+    #bulletin-left:hover, #bulletin-right:hover {
+        opacity: 75%;
+    }
+
+    @media screen and (max-width: 500px) {
+        #bulletin-left, #bulletin-right {
+            display: none;
+        }
+    }
+    
+    #bulletin-panels {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+    #bulletin-rail {
+        display: flex;
+        height: 100%;
+        transform: translateX(0%);
+        transition: transform 0.5s ease;
+        width: 100%;
+    }
+
+    #bulletin-rail > div {
+        flex-shrink: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    #bulletin-dots {
+        align-items: center;
+        display: flex;
+        gap: 0px 10px;
+        justify-content: center;
+    }
+
+    #bulletin-dots > button {
+        background-color: blue;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 10px;
+        outline: none;
+        transition: opacity 0.2s ease;
+        width: 10px;
+    }
+
+    #bulletin-dots > button:hover {
+        opacity: 75%;
+    }
+</style>
+
+<!-- Bulletin -->
+<div id="bulletin">
+    <div id="bulletin-view">
+        <button id="bulletin-left">&lt;</button>
+        <div id="bulletin-panels"><div id="bulletin-rail"></div></div>
+        <button id="bulletin-right">&gt;</button>
+    </div>
+    <div id="bulletin-dots"></div>
+</div>
+
+<!-- Scripts -->
+<script>
+    // Executes script
+    void async function() {
+        // Defines bulletin
+        const bulletinRequest = await fetch("/assets/html/bulletin.html");
+        if(!bulletinRequest.ok) throw new Error("Bulletin failed to load.");
+        const bulletinRail = document.getElementById("bulletin-rail");
+        if(bulletinRail === null) throw new Error("No bulletin rail field found.");
+
+        // Loads bulletin
+        const scripts = bulletinRail.querySelectorAll("script");
+        scripts.forEach((script) => {
+            const clone = document.createElement("script");
+            for(let i = 0; i < script.attributes.length; i++) {
+                const attribute = script.attributes[i];
+                clone.setAttribute(attribute.name, attribute.value);
+            }
+            clone.text = script.text;
+            script.parentNode.replaceChild(clone, script);
+        });
+        bulletinRail.innerHTML = await bulletinRequest.text();
+
+        // Initializes bulletin
+        const bulletinLength = bulletinRail.children.length;
+        let bulletinIndex = 0;
+        
+        // Handles bulletin arrows
+        const bulletinLeft = document.getElementById("bulletin-left");
+        if(bulletinLeft === null) throw new Error("No bulletin panels field found.");
+        bulletinLeft.addEventListener("click", (event) => {
+            bulletinIndex = (bulletinLength + bulletinIndex - 1) % bulletinLength;
+            bulletinUpdate();
+        });
+        const bulletinRight = document.getElementById("bulletin-right");
+        if(bulletinRight === null) throw new Error("No bulletin panels field found.");
+        bulletinRight.addEventListener("click", (event) => {
+            bulletinIndex = (bulletinLength + bulletinIndex + 1) % bulletinLength;
+            bulletinUpdate();
+        });
+
+        // Handles bulletin dots
+        const bulletinDots = document.getElementById("bulletin-dots");
+        if(bulletinDots === null) throw new Error("No bulletin dots field found.");
+        bulletinDots.innerHTML = "<button>a</button>".repeat();
+        for(let i = 0; i < bulletinLength; i++) {
+            const bulletinDot = document.createElement("button");
+            bulletinDot.addEventListener("click", (event) => {
+                bulletinIndex = i;
+                bulletinUpdate();
+            });
+            bulletinDots.appendChild(bulletinDot);
+        }
+
+        // Renders bulletin
+        bulletinUpdate();
+
+        // Defines bulletin handlers
+        function bulletinUpdate() {
+            // Translates rail
+            bulletinRail.style.transform = `translateX(-${bulletinIndex * 100}%)`;
+
+            // Updates dots
+            for(let i = 0; i < bulletinLength; i++) {
+                const bulletinDot = bulletinDots.children.item(i);
+                if(bulletinDot === null) continue;
+                bulletinDot.style.backgroundColor = bulletinIndex === i ? "var(--sd-mono-700)" : "var(--sd-mono-300)";
+            }
+        }
+    }();
+</script>
