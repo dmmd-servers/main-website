@@ -1,18 +1,18 @@
 // Imports
 import chalk from "chalk";
-
-// Defines out sink
-const out = Bun.stdout.writer();
+import project from "./project";
 
 // Defines audit function
 export function audit(head: string, body: string, style: typeof chalk): void {
-    // Calculates zone
+    // Fetches now
     const now = new Date();
+
+    // Calculates zone
     const offset = now.getTimezoneOffset();
-    const direction = offset > 0 ? "-" : "+";
+    const polarity = offset > 0 ? "-" : "+";
     const major = Math.trunc(Math.abs(offset) / 60).toString().padStart(2, "0");
     const minor = (Math.abs(offset) % 60).toString().padStart(2, "0");
-    const zone = `UTC${direction}${major}${minor}`;
+    const zone = `UTC${polarity}${major}${minor}`;
 
     // Calculates date
     const year = now.getFullYear().toString().padStart(4, "0");
@@ -28,9 +28,9 @@ export function audit(head: string, body: string, style: typeof chalk): void {
     const meridian = now.getHours() < 12 ? "AM" : "PM";
     const time = `${hour}:${minute}:${second}.${millisecond} ${meridian}`;
     
-    // Creates message
+    // Writes message
     const message = style(`[${zone} ${date} ${time}] ${head.toUpperCase()} | ${body}\n`);
-    out.write(message);
+    project.log.write(message);
 }
 
 // Exports
