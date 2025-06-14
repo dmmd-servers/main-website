@@ -7,7 +7,7 @@ import faults from "../core/faults";
 export async function route(request: Request, server: Bun.Server): Promise<Response> {
     // Parses url
     const url = new URL(request.url);
-    const target = url.pathname.match(/^\/assets\/(.+)$/);
+    const target = url.pathname.match(/^\/assets\/(.*)$/);
     if(target === null) throw new faults.RouteAbort();
 
     // Resolves asset
