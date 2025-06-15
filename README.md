@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-A small template repository for all of my Bun web servers.
+Barebone http/https Bun server template repository.
 
 ## Installation
 
