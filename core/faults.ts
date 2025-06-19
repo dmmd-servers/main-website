@@ -8,6 +8,12 @@ export abstract class GenericFault extends Error {
 }
 
 // Defines implemented faults
+export class MissingAsset extends GenericFault {
+    // Defines constructor
+    readonly code: string = "MISSING_ASSET";
+    readonly message: string = "The requested asset does not exist.";
+    readonly status: number = 404;
+}
 export class MissingEndpoint extends GenericFault {
     // Defines constructor
     readonly code: string = "MISSING_ENDPOINT";
@@ -30,6 +36,7 @@ export class ServerFailure extends GenericFault {
 // Exports
 export default {
     GenericFault,
+    MissingAsset,
     MissingEndpoint,
     RouteAbort,
     ServerFailure
