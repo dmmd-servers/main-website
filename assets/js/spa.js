@@ -1,3 +1,5 @@
+/* SPA v1.0.0 @ DmmD GM */
+
 // Initializes spa
 export const pages = new Map();
 export const main = document.getElementById("main");
