@@ -1,0 +1,28 @@
+/* Footer */
+footer {    
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+    gap: 50px clamp(100px, 10%, 200px);
+    padding: 100px 40px;
+}
+
+@media screen and (max-width: 500px) {
+    footer {
+        flex-direction: column;
+    }
+}
+
+footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0px;
+}
+
+footer > div > span:first-child {
+    font-weight: bold;
+}
+
+footer > div a {
+    color: var(--sd-blue-700);
+}

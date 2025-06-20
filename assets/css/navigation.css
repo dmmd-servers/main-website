@@ -1,0 +1,8 @@
+/* Navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px clamp(50px, 10%, 100px);
+    justify-content: center;
+    padding: 25px 40px;
+}
