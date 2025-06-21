@@ -1,0 +1,114 @@
+[
+    {
+        "id": "tag:game/abandoned",
+        "name": "Account Abandoned"
+    },
+    {
+        "id": "tag:game/active",
+        "name": "Actively Playing"
+    },
+    {
+        "id": "tag:game/anime",
+        "name": "Anime-Related Game"
+    },
+    {
+        "id": "tag:game/base_building",
+        "name": "Base-Building / Colony-Building Game"
+    },
+    {
+        "id": "tag:game/card_building",
+        "name": "Card Building Game"
+    },
+    {
+        "id": "tag:game/childhood",
+        "name": "Played When Younger"
+    },
+    {
+        "id": "tag:game/community",
+        "name": "Community-Centered Game"
+    },
+    {
+        "id": "tag:game/farm",
+        "name": "Farming / Ranching Game"
+    },
+    {
+        "id": "tag:game/finished",
+        "name": "Progression Completed"
+    },
+    {
+        "id": "tag:game/gift",
+        "name": "It's a Gift! 🎁"
+    },
+    {
+        "id": "tag:game/inactive",
+        "name": "No Longer Playing"
+    },
+    {
+        "id": "tag:game/party",
+        "name": "Party Game"
+    },
+    {
+        "id": "tag:game/pending",
+        "name": "Planning on Playing"
+    },
+    {
+        "id": "tag:game/physics",
+        "name": "Physics-Driven Game"
+    },
+    {
+        "id": "tag:game/puzzle",
+        "name": "Puzzle Game"
+    },
+    {
+        "id": "tag:game/pvp",
+        "name": "Competitive Game"
+    },
+    {
+        "id": "tag:game/racing",
+        "name": "Racing Game"
+    },
+    {
+        "id": "tag:game/reaction_speed",
+        "name": "Reaction-Based Games"
+    },
+    {
+        "id": "tag:game/rhythm",
+        "name": "Rhythm Game"
+    },
+    {
+        "id": "tag:game/rpg",
+        "name": "Role-Playing Game"
+    },
+    {
+        "id": "tag:game/sandbox",
+        "name": "Sandbox Game"
+    },
+    {
+        "id": "tag:game/story",
+        "name": "Story Rich Game"
+    },
+    {
+        "id": "tag:game/strategy_building",
+        "name": "Strategy-Building Game"
+    },
+    {
+        "id": "tag:game/survival",
+        "name": "Survival Game"
+    },
+    {
+        "id": "tag:game/tower_defense",
+        "name": "Tower Defense Game"
+    },
+    {
+        "id": "tag:game/violence",
+        "name": "Game with Violence / Blood"
+    },
+    {
+        "id": "tag:game/wishing",
+        "name": "Game on Wishlist"
+    },
+    {
+        "id": "tag:game/zombie",
+        "name": "Zombie-Related Game"
+    }
+]

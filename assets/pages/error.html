@@ -34,7 +34,7 @@
 <script>
     // Executes script
     void async function() {
-        // Defines quotes
+        // Updates quote
         const quotes = [
             "An error occurred.",
             "How did we get here?",
@@ -48,8 +48,8 @@
             "Wuh... Huh?",
             "???"
         ];
-        const element = document.getElementById("quote");
-        if(element === null) throw new Error("No quote field found.");
-        element.innerText = quotes[Math.floor(Math.random() * quotes.length)];
+        const quote = document.getElementById("quote");
+        if(quote === null) throw new Error("No quote field found.");
+        quote.innerText = quotes[Math.floor(Math.random() * quotes.length)];
     }();
 </script>

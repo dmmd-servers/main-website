@@ -1,0 +1,23 @@
+<div>
+    <h1>Games</h1>
+    <a href="/portfolio">Back to Portfolio</a>
+    <div id="list">
+
+    </div>
+</div>
+
+<script>
+    // Executes script
+    void async function() {
+        // Fetches list
+        const result = await fetch("/assets/src/games.json");
+        if(!result.ok) throw new Error("Failed to load games list.");
+        const anime = await result.json();
+
+        // Populates list
+        const list = document.getElementById("list");
+        if(list === null) throw new Error("Unable to resolve #list element.");
+
+        list.innerHTML = anime.map((entry) => entry.title + " --- (" + (entry.begin ?? "N/A") + " - " + (entry.end ?? "N/A") + ")").join("<br>");
+    }();
+</script>

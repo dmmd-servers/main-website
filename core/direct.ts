@@ -6,11 +6,13 @@ export const root = nodePath.resolve(import.meta.dir, "../");
 
 // Defines relative paths
 export const assets = nodePath.resolve(root, "./assets/");
+export const data = nodePath.resolve(root, "./data/");
 export const contents = nodePath.resolve(root, "./static/");
 
 // Exports
 export default {
     assets,
     contents,
+    data,
     root
 };

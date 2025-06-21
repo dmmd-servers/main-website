@@ -1,0 +1,206 @@
+[
+    {
+        "begin": null,
+        "comment": null,
+        "end": null,
+        "id": "anime:blue_archive_the_animation",
+        "name": "Blue Archive the Animation",
+        "rating": null,
+        "tags": [
+            "tag:anime/highschool",
+            "tag:anime/slice_of_life",
+            "tag:anime/waiting"
+        ],
+        "title": "ブルーアーカイブ The Animation",
+        "wiki": "https://en.wikipedia.org/wiki/Blue_Archive#Anime"
+    },
+    {
+        "begin": "2024-01-16",
+        "comment": "The first anime that I've ever legitamately watched. Honestly cried near the end.",
+        "end": "2024-02-19",
+        "id": "anime:bocchi_the_rock",
+        "name": "Bocchi The Rock!",
+        "rating": 9,
+        "tags": [
+            "tag:anime/band",
+            "tag:anime/comedy",
+            "tag:anime/finished",
+            "tag:anime/highschool",
+            "tag:anime/slice_of_life"
+        ],
+        "title": "ぼっち・ざ・ろっく!",
+        "wiki": "https://en.wikipedia.org/wiki/Bocchi_the_Rock!"
+    },
+    {
+        "begin": "2024-02-21",
+        "comment": "Another great Ghibli movie. I watched it once before with my elementary school friends during one of my classmates' birthday. I wanted to watch it again purely for memory sake and to see the golem handing out a rose scene one more time.",
+        "end": "2024-02-21",
+        "id": "anime:castle_in_the_sky",
+        "name": "Castle in the Sky",
+        "rating": 8.5,
+        "tags": [
+            "tag:anime/finished",
+            "tag:anime/glibli"
+        ],
+        "title": "天空の城ラピュタ",
+        "wiki": "https://en.wikipedia.org/wiki/Castle_in_the_Sky"
+    },
+    {
+        "begin": null,
+        "comment": null,
+        "end": null,
+        "id": "anime:food_for_the_soul",
+        "name": "Food for the Soul",
+        "rating": null,
+        "tags": [
+            "tag:anime/college",
+            "tag:anime/comedy",
+            "tag:anime/recommended",
+            "tag:anime/slice_of_life",
+            "tag:anime/waiting"
+        ],
+        "title": "日々は過ぎれど飯うまし",
+        "wiki": "https://en.wikipedia.org/wiki/Food_for_the_Soul"
+    },
+    {
+        "begin": null,
+        "comment": null,
+        "end": null,
+        "id": "anime:girls_last_tour",
+        "name": "Girls' Last Tour",
+        "rating": null,
+        "tags": [
+            "tag:anime/apocalypse",
+            "tag:anime/slice_of_life",
+            "tag:anime/waiting"
+        ],
+        "title": "少女終末旅行",
+        "wiki": "https://en.wikipedia.org/wiki/Girls%27_Last_Tour"
+    },
+    {
+        "begin": null,
+        "comment": null,
+        "end": null,
+        "id": "anime:hinako_note",
+        "name": "Hinako Note",
+        "rating": null,
+        "tags": [
+            "tag:anime/comedy",
+            "tag:anime/highschool",
+            "tag:anime/slice_of_life",
+            "tag:anime/waiting"
+        ],
+        "title": "しかのこのこのここしたんた!",
+        "wiki": "https://en.wikipedia.org/wiki/Hinako_Note"
+    },
+    {
+        "begin": null,
+        "comment": null,
+        "end": null,
+        "id": "anime:k_on",
+        "name": "K-ON!",
+        "rating": null,
+        "tags": [
+            "tag:anime/band",
+            "tag:anime/comedy",
+            "tag:anime/highschool",
+            "tag:anime/slice_of_life",
+            "tag:anime/waiting"
+        ],
+        "title": "けいおん!",
+        "wiki": "https://en.wikipedia.org/wiki/K-On!"
+    },
+    {
+        "begin": "2025-02-22",
+        "comment": "Konata's lazy and playful character trope is literally me (.w.)! It has the perfect balance of wholesome AND \"questionable\" humor. (Sorry, there's just something about dark and adult humor that really gets me~). I know it's an old anime but you should definitely give it a try, especially if you miss the good old 2000s/2010s simple life. So far, this is probably my favorite anime out of the entire list.",
+        "end": "2025-05-31",
+        "id": "anime:lucky_star",
+        "name": "Lucky ☆ Star",
+        "rating": 10,
+        "tags": [
+            "tag:anime/comedy",
+            "tag:anime/finished",
+            "tag:anime/highschool",
+            "tag:anime/slice_of_life"
+        ],
+        "title": "らき☆すた",
+        "wiki": "https://en.wikipedia.org/wiki/Lucky_Star_(manga)"
+    },
+    {
+        "begin": null,
+        "comment": null,
+        "end": null,
+        "id": "anime:my_deer_friend_nokotan",
+        "name": "My Deer Friend Nokotan",
+        "rating": null,
+        "tags": [
+            "tag:anime/comedy",
+            "tag:anime/highschool",
+            "tag:anime/slice_of_life",
+            "tag:anime/waiting"
+        ],
+        "title": "しかのこのこのここしたんた!",
+        "wiki": "https://en.wikipedia.org/wiki/My_Deer_Friend_Nokotan"
+    },
+    {
+        "begin": "2024-04-17",
+        "comment": "Very wholesome and relaxing story. It's almost like a bedtime story. It doesn't feel too sophisticated, and the pacing still felt engaging enough that I wanted to learn more about what happens next in the story.",
+        "end": "2024-04-17",
+        "id": "anime:my_neighbor_totoro",
+        "name": "My Neighbor Totoro",
+        "rating": 8,
+        "tags": [
+            "tag:anime/finished",
+            "tag:anime/glibli"
+        ],
+        "title": "となりのトトロ",
+        "wiki": "https://en.wikipedia.org/wiki/My_Neighbor_Totoro"
+    },
+    {
+        "begin": "2024-04-14",
+        "comment": "I'm a huge fan of comedy animations with punchlines that make absolute zero sense. The vibe is very casual, and the jokes are very relatable at times.",
+        "end": "2024-04-17",
+        "id": "anime:nichijou",
+        "name": "Nichijou",
+        "rating": 8.5,
+        "tags": [
+            "tag:anime/comedy",
+            "tag:anime/finished",
+            "tag:anime/highschool",
+            "tag:anime/slice_of_life"
+        ],
+        "title": "日常",
+        "wiki": "https://en.wikipedia.org/wiki/Nichijou"
+    },
+    {
+        "begin": "2024-02-19",
+        "comment": "I think I've watched it once when I was only in 1st grade, except I didn't really understand anything back then. I chose to rewatched it again to revisit that piece of my childhood. Honestly a really nostalgic movie for me. Definitely would recommend it if this is your first time watching a Ghibli movie.",
+        "end": "2024-02-19",
+        "id": "anime:spirited_away",
+        "name": "Spirited Away",
+        "rating": 9,
+        "tags": [
+            "tag:anime/finished",
+            "tag:anime/glibli"
+        ],
+        "title": "千と千尋の神隠し",
+        "wiki": "https://en.wikipedia.org/wiki/Spirited_Away"
+    },
+    {
+        "begin": "2024-06-16",
+        "comment": null,
+        "end": null,
+        "id": "anime:yuru_camp_1",
+        "name": "Yuru Camp △ (Season 1)",
+        "rating": null,
+        "tags": [
+            "tag:anime/camp",
+            "tag:anime/comedy",
+            "tag:anime/highschool",
+            "tag:anime/ongoing",
+            "tag:anime/slice_of_life"
+        ],
+        "title": "ゆるキャン△ (Season 1)",
+        "wiki": "https://en.wikipedia.org/wiki/Laid-Back_Camp"
+    }
+]

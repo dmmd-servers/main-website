@@ -1,0 +1,1060 @@
+[
+    {
+        "begin": "2023-06-08",
+        "comment": "I heard about this game from a YouTuber. It's an alright game but not as engaging as I thought it would be.",
+        "end": null,
+        "id": "game:112_operator",
+        "name": "112 Operator",
+        "rating": 7,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/reaction_speed"
+        ],
+        "title": "112 Operator",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2020-09-29",
+        "comment": "Used to play it every day during the Covid-19 pandemic but stopped playing when it started adding too many updates to appease to general public.",
+        "end": null,
+        "id": "game:among_us",
+        "name": "Among Us",
+        "rating": 7,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/party"
+        ],
+        "title": "Among Us",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Among_Us"
+    },
+    {
+        "begin": null,
+        "comment": "The game that got me into video games.",
+        "end": null,
+        "id": "game:angry_birds",
+        "name": "Angry Birds",
+        "rating": 8,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/physics"
+        ],
+        "title": "Angry Birds",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Angry_Birds_(video_game)"
+    },
+    {
+        "begin": null,
+        "comment": "When I first played this game back when I was in elementary school, I could never get past the first world. One of my favorite things to do in that game is to watch the Angry Toons that was built-in in the game before they removed it.",
+        "end": null,
+        "id": "game:angry_birds_epic",
+        "name": "Angry Birds Epic",
+        "rating": 7,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/rpg"
+        ],
+        "title": "Angry Birds Epic",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Angry_Birds_Epic"
+    },
+    {
+        "begin": null,
+        "comment": "It was actually a really nice game to play before the updates ruined it. As a child, one of my favorite things to do is upgrading my carts and racing over and over again to unlock new characters.",
+        "end": null,
+        "id": "game:angry_birds_go",
+        "name": "Angry Birds Go!",
+        "rating": 7,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/racing"
+        ],
+        "title": "Angry Birds Go!",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Angry_Birds_Go!"
+    },
+    {
+        "begin": "2025-01-25",
+        "comment": "I wanted to try something else other than Blue Archive. It would have been a fine game, but after playing it for a few days, I realized I won't have time to grind two games at once.",
+        "end": "2025-03-23",
+        "id": "game:assault_lily_last_bullet_w",
+        "name": "Assault Lily Last Bullet W",
+        "rating": 8,
+        "tags": [
+            "tag:game/abandoned",
+            "tag:game/anime",
+            "tag:game/story"
+        ],
+        "title": "Assault Lily Last Bullet W",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2023-08-07",
+        "comment": "One of my favorite mobile games ever. Adorable character design and engaging gameplay. I primarily joined for the soundtrack but the story convinced me to stay.",
+        "end": null,
+        "id": "game:blue_archive",
+        "name": "Blue Archive",
+        "rating": 10,
+        "tags": [
+            "tag:game/active",
+            "tag:game/anime",
+            "tag:game/story"
+        ],
+        "title": "ブルーアーカイブ",
+        "users": [
+            "DmmD"
+        ],
+        "wiki": "https://en.wikipedia.org/wiki/Blue_Archive"
+    },
+    {
+        "begin": "2022",
+        "comment": "This used to be my afterschool time killer until I found Blue Archive.",
+        "end": "2023",
+        "id": "game:boom_beach",
+        "name": "Boom Beach",
+        "rating": 5,
+        "tags": [
+            "tag:game/base_building",
+            "tag:game/inactive"
+        ],
+        "title": "Boom Beach",
+        "users": [
+            "DmmDGM"
+        ],
+        "wiki": "https://en.wikipedia.org/wiki/Boom_Beach"
+    },
+    {
+        "begin": "2023-07-06",
+        "comment": null,
+        "end": null,
+        "id": "game:chrono_trigger",
+        "name": "Chrono Trigger",
+        "rating": null,
+        "tags": [
+            "tag:game/pending",
+            "tag:game/story"
+        ],
+        "title": "Chrono Trigger",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Chrono_Trigger"
+    },
+    {
+        "begin": "2023-05-18",
+        "comment": "A fine city-building game. Too complicated for me to play though.",
+        "end": null,
+        "id": "game:cities_skylines",
+        "name": "Cities: Skylines",
+        "rating": 7,
+        "tags": [
+            "tag:game/base_building",
+            "tag:game/inactive"
+        ],
+        "title": "Cities: Skylines",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Cities:_Skylines"
+    },
+    {
+        "begin": "2014",
+        "comment": "I used to play this game with my cousin when I was only in 2nd grade. It used to be such a fun game without any pay to win.",
+        "end": "2018",
+        "id": "game:clash_of_clans",
+        "name": "Clash of Clans",
+        "rating": 5,
+        "tags": [
+            "tag:game/base_building",
+            "tag:game/childhood",
+            "tag:game/inactive"
+        ],
+        "title": "Clash of Clans",
+        "users": [
+            "123木头人"
+        ],
+        "wiki": "https://en.wikipedia.org/wiki/Clash_of_Clans"
+    },
+    {
+        "begin": "2016",
+        "comment": "I also used to play this game with my cousin when I was in 4th grade. I kept playing until it got too boring to grind.",
+        "end": "2022",
+        "id": "game:clash_royale",
+        "name": "Clash Royale",
+        "rating": 5,
+        "tags": [
+            "tag:game/card_building",
+            "tag:game/childhood"
+        ],
+        "title": "Clash Royale",
+        "users": [
+            "123木头人#2"
+        ],
+        "wiki": "https://en.wikipedia.org/wiki/Clash_Royale"
+    },
+    {
+        "begin": "2022-09-06",
+        "comment": "It's an alright first-person shooter game that my highschool friend liked to play. It's not really my type though.",
+        "end": null,
+        "id": "game:counter_strike_2",
+        "name": "Counter-Strike 2",
+        "rating": 5,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/pvp"
+        ],
+        "title": "Counter-Strike 2",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Counter-Strike#Counter-Strike_2"
+    },
+    {
+        "begin": "2023-04-21",
+        "comment": "I found this game from Gobou.",
+        "end": null,
+        "id": "game:crypt_of_the_necrodancer",
+        "name": "Crypt of the NecroDancer",
+        "rating": 6,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/rhythm"
+        ],
+        "title": "Crypt of the NecroDancer",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Crypt_of_the_NecroDancer"
+    },
+    {
+        "begin": "2020-01-02",
+        "comment": null,
+        "end": null,
+        "id": "game:deltarune",
+        "name": "Deltarune",
+        "rating": null,
+        "tags": [
+            "tag:game/pending",
+            "tag:game/story"
+        ],
+        "title": "Deltarune",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Deltarune"
+    },
+    {
+        "begin": "2020-03-20",
+        "comment": "I love the Don't Starve series when I was younger. It felt like Minecraft but more serious. The multiplayer version made it a lot more fun though.",
+        "end": null,
+        "id": "game:dont_starve_together",
+        "name": "Don't Starve Together",
+        "rating": 9,
+        "tags": [
+            "tag:game/active",
+            "tag:game/sandbox",
+            "tag:game/survival"
+        ],
+        "title": "Don't Starve Together",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Don%27t_Starve#Don't_Starve_Together"
+    },
+    {
+        "begin": "2020-09-08",
+        "comment": "I was pulled into this game by my friend. It used to be popular during the Covid-19 pandemic but its popularity have died down since then.",
+        "end": null,
+        "id": "game:fall_guys",
+        "name": "Fall Guys",
+        "rating": 7,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/party"
+        ],
+        "title": "Fall Guys",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Fall_Guys"
+    },
+    {
+        "begin": null,
+        "comment": "One of my favorite iPad games that I used to play when I was a child.",
+        "end": null,
+        "id": "game:fruit_ninja",
+        "name": "Fruit Ninja",
+        "rating": 8,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/reaction_speed"
+        ],
+        "title": "Fruit Ninja",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Fruit_Ninja"
+    },
+    {
+        "begin": "2023-06-01",
+        "comment": "Bought it because my friend forced me to play it. I was never a fan of this game.",
+        "end": null,
+        "id": "game:grand_theft_auto_5",
+        "name": "Grand Theft Auto V",
+        "rating": 4,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/violence"
+        ],
+        "title": "Grand Theft Auto V",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V"
+    },
+    {
+        "begin": "2022-12-24",
+        "comment": null,
+        "end": null,
+        "id": "game:half_life",
+        "name": "Half-Life",
+        "rating": null,
+        "tags": [
+            "tag:game/inactive"
+        ],
+        "title": "Half-Life",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Half-Life_(video_game)"
+    },
+    {
+        "begin": "2022-12-24",
+        "comment": null,
+        "end": null,
+        "id": "game:half_life_2",
+        "name": "Half-Life 2",
+        "rating": null,
+        "tags": [
+            "tag:game/inactive"
+        ],
+        "title": "Half-Life 2",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Half-Life_2"
+    },
+    {
+        "begin": "2022-12-25",
+        "comment": null,
+        "end": null,
+        "id": "game:half_life_2_episode_2",
+        "name": "Half-Life 2: Episode Two",
+        "rating": null,
+        "tags": [
+            "tag:game/inactive"
+        ],
+        "title": "Half-Life 2: Episode Two",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Half-Life_2:_Episode_Two"
+    },
+    {
+        "begin": null,
+        "comment": "I remember playing it when I was only in elementary school, but I could never go far.",
+        "end": null,
+        "id": "game:hay_day",
+        "name": "Hay Day",
+        "rating": 4,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/farm",
+            "tag:game/inactive"
+        ],
+        "title": "Hay Day",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2023-05-11",
+        "comment": "I bought this game after the AP test in 2023 because my friend loved playing it and forced me to buy it. I still don't understand how to play it.",
+        "end": null,
+        "id": "game:hearts_of_iron_4",
+        "name": "Hearts of Iron IV",
+        "rating": 8.5,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/strategy_building"
+        ],
+        "title": "Hearts of Iron IV",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Hearts_of_Iron_IV"
+    },
+    {
+        "begin": "2024-08-22",
+        "comment": "I found this game while browsing through Steam. It looked alright as a fun time killer. I got lazy trying to unlock more cards though.",
+        "end": null,
+        "id": "game:kards",
+        "name": "Kards - The WWII Card Game",
+        "rating": 7,
+        "tags": [
+            "tag:game/card_building",
+            "tag:game/inactive"
+        ],
+        "title": "Kards - The WWII Card Game",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Kards"
+    },
+    {
+        "begin": "2020-09-23",
+        "comment": "I was bored one day and found this free game on Steam. It's pretty fun. I like to play it with my highschool friends whenever I feel bored.",
+        "end": null,
+        "id": "game:king_of_crabs",
+        "name": "King of Crabs",
+        "rating": 9,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/pvp"
+        ],
+        "title": "King of Crabs",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/King_of_Crabs"
+    },
+    {
+        "begin": "2020-11-01",
+        "comment": "I actually don't really remember owning this game. I think I stopped playing it after the first day because my old PC literally could not run it.",
+        "end": null,
+        "id": "game:left_4_dead_2",
+        "name": "Left 4 Dead 2",
+        "rating": 7,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/zombie"
+        ],
+        "title": "Left 4 Dead 2",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Left_4_Dead_2"
+    },
+    {
+        "begin": "2023-07-13",
+        "comment": null,
+        "end": null,
+        "id": "game:lisa_the_joyful",
+        "name": "LISA the Joyful",
+        "rating": null,
+        "tags": [
+            "tag:game/pending",
+            "tag:game/story"
+        ],
+        "title": "LISA the Joyful",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2023-07-13",
+        "comment": null,
+        "end": null,
+        "id": "game:lisa_the_painful",
+        "name": "LISA",
+        "rating": null,
+        "tags": [
+            "tag:game/pending",
+            "tag:game/story"
+        ],
+        "title": "LISA",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Lisa:_The_Painful"
+    },
+    {
+        "begin": "2024-04-26",
+        "comment": "Initially I downloaded for the Blue Archive collab, but it was actually a pretty fun game after I learned the basic rules. Happy to play it with anyone if you're interested!",
+        "end": null,
+        "id": "game:mahjong_soul",
+        "name": "Mahjong Soul",
+        "rating": 8.5,
+        "tags": [
+            "tag:game/active",
+            "tag:game/anime",
+            "tag:game/pvp"
+        ],
+        "title": "Mahjong Soul",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Mahjong_Soul"
+    },
+    {
+        "begin": "2018-07-25",
+        "comment": "I started playing this game on a cracked client way back in 2015. I bought my Minecraft account in 2018 and have been playing it ever since.",
+        "end": null,
+        "id": "game:minecraft",
+        "name": "Minecraft",
+        "rating": 9,
+        "tags": [
+            "tag:game/active",
+            "tag:game/sandbox",
+            "tag:game/survival"
+        ],
+        "title": "Minecraft",
+        "users": [
+            "DmmDGaming"
+        ],
+        "wiki": "https://en.wikipedia.org/wiki/Minecraft"
+    },
+    {
+        "begin": "2023-12-22",
+        "comment": "It's a meh rhythm game that I learned about from Rhythm Doctor.",
+        "end": null,
+        "id": "game:muse_dash",
+        "name": "Muse Dash",
+        "rating": 7,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/rhythm"
+        ],
+        "title": "Muse Dash",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Muse_Dash"
+    },
+    {
+        "begin": "2024-06-01",
+        "comment": null,
+        "end": null,
+        "id": "game:narcissu_10th_anniversary_anthology_project",
+        "name": "Narcissu 10th Anniversary Anthology Project",
+        "rating": null,
+        "tags": [
+            "tag:game/anime",
+            "tag:game/gift",
+            "tag:game/pending",
+            "tag:game/story"
+        ],
+        "title": "Narcissu 10th Anniversary Anthology Project",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2025-05-06",
+        "comment": "I watched an entire series on NieR: Automata when I was in elementary school. I thought it was really cool and wanted to play it myself.",
+        "end": null,
+        "id": "game:nier_automata",
+        "name": "NieR: Automata™",
+        "rating": 8,
+        "tags": [
+            "tag:game/anime",
+            "tag:game/pending",
+            "tag:game/story"
+        ],
+        "title": "NieR: Automata™",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Nier:_Automata"
+    },
+    {
+        "begin": "2023-07-06",
+        "comment": "Learned about this game from Merg's video. It got me so emotional near the end. I even have a YouTube playthrough stream about it, which you can find it on my YouTube profile.",
+        "end": null,
+        "id": "game:omori",
+        "name": "OMORI",
+        "rating": 10,
+        "tags": [
+            "tag:game/finished",
+            "tag:game/story"
+        ],
+        "title": "OMORI",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Omori_(video_game)"
+    },
+    {
+        "begin": "2023-04-29",
+        "comment": "Niko is cute. What else can I say.",
+        "end": null,
+        "id": "game:oneshot",
+        "name": "OneShot",
+        "rating": 10,
+        "tags": [
+            "tag:game/finished",
+            "tag:game/story"
+        ],
+        "title": "OneShot",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/OneShot"
+    },
+    {
+        "begin": "2024-09-30",
+        "comment": "I love OneShot, and I would 100% play it again if I could. So... I did!",
+        "end": null,
+        "id": "game:oneshot_world_machine_edition",
+        "name": "OneShot: World Machine Edition",
+        "rating": 10,
+        "tags": [
+            "tag:game/finished",
+            "tag:game/story"
+        ],
+        "title": "OneShot: World Machine Edition",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2023-05-15",
+        "comment": "I watched a series on Overcooked back when I was in elementary school. I bought it when it was on sale but no one to play it with me. :c",
+        "end": null,
+        "id": "game:overcooked_all_you_can_eat",
+        "name": "Overcooked! All You Can Eat",
+        "rating": 8,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/party"
+        ],
+        "title": "Overcooked! All You Can Eat",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Overcooked"
+    },
+    {
+        "begin": "2023-06-16",
+        "comment": "Probably one of the most fun colony-building games out there. Still play it till this day.",
+        "end": null,
+        "id": "game:oxygen_not_included",
+        "name": "Oxygen Not Included",
+        "rating": 10,
+        "tags": [
+            "tag:game/active",
+            "tag:game/base_building"
+        ],
+        "title": "Oxygen Not Included",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Oxygen_Not_Included"
+    },
+    {
+        "begin": "2023-07-02",
+        "comment": "Blood everywhere!",
+        "end": null,
+        "id": "game:people_playground",
+        "name": "People Playground",
+        "rating": 6,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/violence"
+        ],
+        "title": "People Playground",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2024-08-11",
+        "comment": "I learned about this game back in elementary school. A friend then encouraged me to buy the game. It's a fine game except there aren't any major updates that make it exciting anymore.",
+        "end": null,
+        "id": "game:plague_inc",
+        "name": "Plague Inc: Evolved",
+        "rating": 8,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/strategy_building"
+        ],
+        "title": "Plague Inc: Evolved",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Plague_Inc."
+    },
+    {
+        "begin": null,
+        "comment": "One of the earliest games that I have played as a child. I still love to watch people play it.",
+        "end": null,
+        "id": "game:plants_vs_zombies",
+        "name": "Plants vs. Zombies",
+        "rating": 8,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/tower_defense"
+        ],
+        "title": "Plants vs. Zombies",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Plants_vs._Zombies"
+    },
+    {
+        "begin": "2017",
+        "comment": "Used to play it every day on my way to elementary school.",
+        "end": "2019",
+        "id": "game:plants_vs_zombies_2",
+        "name": "Plants vs. Zombies 2",
+        "rating": 7,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/tower_defense"
+        ],
+        "title": "Plants vs. Zombies 2",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Plants_vs._Zombies_2"
+    },
+    {
+        "begin": "2022-12-24",
+        "comment": "It was a Christmas present... from myself. I remembered it being a classic game, so I bought it for myself.",
+        "end": null,
+        "id": "game:portal",
+        "name": "Portal",
+        "rating": 8,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/puzzle"
+        ],
+        "title": "Portal",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Portal_(video_game)"
+    },
+    {
+        "begin": "2022-12-24",
+        "comment": "It was also a Christmas present from myself. Bought it in a bundle with the rest of the Valve games because it was on sale.",
+        "end": null,
+        "id": "game:portal_2",
+        "name": "Portal 2",
+        "rating": 8,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/puzzle"
+        ],
+        "title": "Portal 2",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Portal_2"
+    },
+    {
+        "begin": "2020-08-03",
+        "comment": "I saw this game once when I was still in elementary school and thought it was really fun to manage electricity and water and build rooms for immates.",
+        "end": null,
+        "id": "game:prison_architect",
+        "name": "Prison Architect",
+        "rating": 7,
+        "tags": [
+            "tag:game/base_building",
+            "tag:game/inactive"
+        ],
+        "title": "Prison Architect",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Prison_Architect"
+    },
+    {
+        "begin": "2023-12-22",
+        "comment": "A rhythm game that I like to play on stream from time to time. You can find the stream playlist on my YouTube profile.",
+        "end": null,
+        "id": "game:rhythm_doctor",
+        "name": "Rhythm Doctor",
+        "rating": 9,
+        "tags": [
+            "tag:game/active",
+            "tag:game/rhythm"
+        ],
+        "title": "Rhythm Doctor",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2017-08-21",
+        "comment": "Used to play Roblox frequently since I didn't have any money. Now I really only play Phantom Forces on it.",
+        "end": null,
+        "id": "game:roblox",
+        "name": "Roblox",
+        "rating": 6,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/community",
+            "tag:game/inactive"
+        ],
+        "title": "Roblox",
+        "users": [
+            "Dm3113mD",
+            "Dm123321_31mD",
+            "123321_31",
+            "iipno9423"
+        ],
+        "wiki": "https://en.wikipedia.org/wiki/Roblox"
+    },
+    {
+        "begin": "2023-06-04",
+        "comment": "I suddenly remembered this game existed and bought it because why not. Turns out it wasn't as fun as I hoped it would be.",
+        "end": null,
+        "id": "game:shapez",
+        "name": "Shapez",
+        "rating": 5,
+        "tags": [
+            "tag:game/base_building",
+            "tag:game/inactive"
+        ],
+        "title": "Shapez",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2023-06-12",
+        "comment": "I remember watching about it in elementary school. The game was fun initially, but it became boring after only a few days.",
+        "end": null,
+        "id": "game:stardew_valley",
+        "name": "Stardew Valley",
+        "rating": 8,
+        "tags": [
+            "tag:game/farm",
+            "tag:game/inactive"
+        ],
+        "title": "Stardew Valley",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Stardew_Valley"
+    },
+    {
+        "begin": "2020-09-21",
+        "comment": "I remember watching a series about this game when I was in elementary school. Had to refund it in 2020-09-28 because my old PC could not handle its graphics.",
+        "end": "2020-09-28",
+        "id": "game:stranded_deep",
+        "name": "Stranded Deep",
+        "rating": 7,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/survival"
+        ],
+        "title": "Stranded Deep",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Stranded_Deep"
+    },
+    {
+        "begin": null,
+        "comment": "I used to play it on my iPad but I was never good at it.",
+        "end": null,
+        "id": "game:subway_surfers",
+        "name": "Subway Surfers",
+        "rating": 7,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/reaction_speed"
+        ],
+        "title": "Subway Surfers",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Subway_Surfers"
+    },
+    {
+        "begin": "2022-08-08",
+        "comment": "A fun battle royale that I like to play with my friends.",
+        "end": null,
+        "id": "game:super_animal_royale",
+        "name": "Super Animal Royale",
+        "rating": 7,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/pvp"
+        ],
+        "title": "Super Animal Royale",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Super_Animal_Royale"
+    },
+    {
+        "begin": "2022-11-05",
+        "comment": "A casual competitive game that I like to play with my highschool friends from time to time.",
+        "end": null,
+        "id": "game:super_auto_pets",
+        "name": "Super Auto Pets",
+        "rating": 8,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/pvp"
+        ],
+        "title": "Super Auto Pets",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Super_Auto_Pets"
+    },
+    {
+        "begin": "2020-01-02",
+        "comment": "One of my favorite series I used to watch when I was in elementary and middle school was DGR's Super Mario Maker videos. I asked my dad to buy a Nintendo Switch for Christmas in 2019, and Super Mario Maker 2 was the game I decided to buy with it. It's an alright game, but it will always be special to me regardless.",
+        "end": null,
+        "id": "game:super_mario_maker_2",
+        "name": "Super Mario Maker 2",
+        "rating": 9,
+        "tags": [
+            "tag:game/base_building",
+            "tag:game/inactive"
+        ],
+        "title": "Super Mario Maker 2",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Super_Mario_Maker_2"
+    },
+    {
+        "begin": null,
+        "comment": "Growing up, I never really understood how the game worked. I would just swipe left and right randomly and hope that I could pass.",
+        "end": null,
+        "id": "game:temple_run",
+        "name": "Temple Run",
+        "rating": 7,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/reaction_speed"
+        ],
+        "title": "Temple Run",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Temple_Run"
+    },
+    {
+        "begin": "2020-10-02",
+        "comment": "I will get canceled for saying this: It's literally just 2D Minecraft. I watched a series on it back in elementary school and have wanted to play it ever since. Although now that it stopped releasing major updates, I started to lose some interest in it.",
+        "end": null,
+        "id": "game:terraria",
+        "name": "Terraria",
+        "rating": 8.5,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/sandbox",
+            "tag:game/survival"
+        ],
+        "title": "Terraria",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Terraria"
+    },
+    {
+        "begin": "2025-01-07",
+        "comment": "Car building game that I like to play with my highschool friend.",
+        "end": null,
+        "id": "game:terratech",
+        "name": "Terratech",
+        "rating": 8,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/sandbox",
+            "tag:game/survival"
+        ],
+        "title": "Terratech",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/TerraTech"
+    },
+    {
+        "begin": "2020-08-31",
+        "comment": "Very fun prison-escaping game. I watched someone play the first version of this game when I was in elementary school and have alwayed wanted to play it myself ever since.",
+        "end": null,
+        "id": "game:the_escapists_2",
+        "name": "The Escapists 2",
+        "rating": 8,
+        "tags": [
+            "tag:game/active",
+            "tag:game/strategy_building"
+        ],
+        "title": "The Escapists 2",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/The_Escapists_2"
+    },
+    {
+        "begin": "2024-08-10",
+        "comment": null,
+        "end": null,
+        "id": "game:trove",
+        "name": "Trove",
+        "rating": null,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/sandbox",
+            "tag:game/survival"
+        ],
+        "title": "Trove",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Trove_(video_game)"
+    },
+    {
+        "begin": "2023-12-30",
+        "comment": "I love the simple parkour game. I learned about it back in elementary school and have wanted it ever since. Sadly no one wants to play it with me though.",
+        "end": null,
+        "id": "game:ultimate_chicken_horse",
+        "name": "Ultimate Chicken Horse",
+        "rating": 8,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/party"
+        ],
+        "title": "Ultimate Chicken Horse",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Ultimate_Chicken_Horse"
+    },
+    {
+        "begin": "2020-08-29",
+        "comment": "One of my favorite story-rich RPGs and probably one of the most educational video games I've ever played. From speaking up and making my first friends to having faith in myself and the people around me and even inspiring me to continue taking risks and challenges in life, Undertale was literally always there in each step of my life. It was the key for me to stay motivated throughout my first few months in middle/high school, a time when I was one of the shyest students in the classroom, and I hope the lessons will persist with me throughout my entire life. It would not be an exaggeration to say that without Undertale, I would not be the same me today.",
+        "end": null,
+        "id": "game:undertale",
+        "name": "Undertale",
+        "rating": 10,
+        "tags": [
+            "tag:game/finished",
+            "tag:game/story"
+        ],
+        "title": "Undertale",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Undertale"
+    },
+    {
+        "begin": "2023-04-19",
+        "comment": "Friendship destroying table-top game, but now I bought it on Steam.",
+        "end": null,
+        "id": "game:uno",
+        "name": "Uno",
+        "rating": 8.5,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/party"
+        ],
+        "title": "Uno",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Uno_(video_game)"
+    },
+    {
+        "begin": "2019-04-14",
+        "comment": "I used to love watching people play this game when I was in elementary school. It stopped receiving major updates. Now I just like to play casual PvPs with my friends sometime.",
+        "end": null,
+        "id": "game:unturned",
+        "name": "Unturned",
+        "rating": 7,
+        "tags": [
+            "tag:game/active",
+            "tag:game/sandbox",
+            "tag:game/survival",
+            "tag:game/zombie"
+        ],
+        "title": "Unturned",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Unturned"
+    },
+    {
+        "begin": "2022-11-11",
+        "comment": "A tank game that I got dragged playing. I was not very good at it.",
+        "end": null,
+        "id": "game:war_thunder",
+        "name": "War Thunder",
+        "rating": 7,
+        "tags": [
+            "tag:game/inactive",
+            "tag:game/pvp"
+        ],
+        "title": "War Thunder",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/War_Thunder"
+    },
+    {
+        "begin": null,
+        "comment": "It was pretty cool delivering water.",
+        "end": null,
+        "id": "game:wheres_my_water",
+        "name": "Where's My Water?",
+        "rating": 8,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/puzzle"
+        ],
+        "title": "Where's My Water?",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Where%27s_My_Water%3F"
+    },
+    {
+        "begin": null,
+        "comment": "It was practically the same game.",
+        "end": null,
+        "id": "game:wheres_my_water_2",
+        "name": "Where's My Water? 2",
+        "rating": 6,
+        "tags": [
+            "tag:game/childhood",
+            "tag:game/inactive",
+            "tag:game/puzzle"
+        ],
+        "title": "Where's My Water? 2",
+        "users": [],
+        "wiki": null
+    },
+    {
+        "begin": "2022-09-28",
+        "comment": "A walking simulator but fun... and a little bit of scary. I played it on stream. You can find it on my YouTube profile.",
+        "end": null,
+        "id": "game:yume_nikki",
+        "name": "Yume Nikki",
+        "rating": 10,
+        "tags": [
+            "tag:game/finished",
+            "tag:game/story"
+        ],
+        "title": "Yume Nikki",
+        "users": [],
+        "wiki": "https://en.wikipedia.org/wiki/Yume_Nikki"
+    }
+]
