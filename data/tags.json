@@ -1,5 +1,57 @@
 [
     {
+        "id": "tag:anime/apocalypse",
+        "name": "Apocalypse-Themed Anime"
+    },
+    {
+        "id": "tag:anime/band",
+        "name": "Band-Themed Anime"
+    },
+    {
+        "id": "tag:anime/camp",
+        "name": "Camp-Themed Anime"
+    },
+    {
+        "id": "tag:anime/college",
+        "name": "College-Themed Anime"
+    },
+    {
+        "id": "tag:anime/comedy",
+        "name": "Comedy-Themed Anime"
+    },
+    {
+        "id": "tag:anime/completed",
+        "name": "Finished Watching"
+    },
+    {
+        "id": "tag:anime/glibli",
+        "name": "Glibli Anime"
+    },
+    {
+        "id": "tag:anime/highschool",
+        "name": "Highschool-Themed Anime"
+    },
+    {
+        "id": "tag:anime/ongoing",
+        "name": "Still Watching"
+    },
+    {
+        "id": "tag:anime/pending",
+        "name": "Planning on Watching"
+    },
+    {
+        "id": "tag:anime/recommended",
+        "name": "Recommended by a Friend"
+    },
+    {
+        "id": "tag:anime/slice_of_life",
+        "name": "Slice of Life Anime"
+    },
+    {
+        "id": "tag:anime/wishlist",
+        "name": "Anime on Wishlist / Not Released"
+    },
+    {
         "id": "tag:game/abandoned",
         "name": "Account Abandoned"
     },
@@ -28,12 +80,12 @@
         "name": "Community-Centered Game"
     },
     {
-        "id": "tag:game/farm",
-        "name": "Farming / Ranching Game"
+        "id": "tag:game/completed",
+        "name": "Progression Completed"
     },
     {
-        "id": "tag:game/finished",
-        "name": "Progression Completed"
+        "id": "tag:game/farm",
+        "name": "Farming / Ranching Game"
     },
     {
         "id": "tag:game/gift",
@@ -104,8 +156,8 @@
         "name": "Game with Violence / Blood"
     },
     {
-        "id": "tag:game/wishing",
-        "name": "Game on Wishlist"
+        "id": "tag:game/wishlist",
+        "name": "Game on Wishlist / Not Released"
     },
     {
         "id": "tag:game/zombie",

@@ -538,7 +538,7 @@
         "name": "OMORI",
         "rating": 10,
         "tags": [
-            "tag:game/finished",
+            "tag:game/completed",
             "tag:game/story"
         ],
         "title": "OMORI",
@@ -553,7 +553,7 @@
         "name": "OneShot",
         "rating": 10,
         "tags": [
-            "tag:game/finished",
+            "tag:game/completed",
             "tag:game/story"
         ],
         "title": "OneShot",
@@ -568,7 +568,7 @@
         "name": "OneShot: World Machine Edition",
         "rating": 10,
         "tags": [
-            "tag:game/finished",
+            "tag:game/completed",
             "tag:game/story"
         ],
         "title": "OneShot: World Machine Edition",
@@ -956,7 +956,7 @@
         "name": "Undertale",
         "rating": 10,
         "tags": [
-            "tag:game/finished",
+            "tag:game/completed",
             "tag:game/story"
         ],
         "title": "Undertale",
@@ -1050,7 +1050,7 @@
         "name": "Yume Nikki",
         "rating": 10,
         "tags": [
-            "tag:game/finished",
+            "tag:game/completed",
             "tag:game/story"
         ],
         "title": "Yume Nikki",

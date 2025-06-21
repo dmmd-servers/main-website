@@ -8,8 +8,8 @@
         "rating": null,
         "tags": [
             "tag:anime/highschool",
-            "tag:anime/slice_of_life",
-            "tag:anime/waiting"
+            "tag:anime/pending",
+            "tag:anime/slice_of_life"
         ],
         "title": "ブルーアーカイブ The Animation",
         "wiki": "https://en.wikipedia.org/wiki/Blue_Archive#Anime"
@@ -24,7 +24,7 @@
         "tags": [
             "tag:anime/band",
             "tag:anime/comedy",
-            "tag:anime/finished",
+            "tag:anime/completed",
             "tag:anime/highschool",
             "tag:anime/slice_of_life"
         ],
@@ -39,7 +39,7 @@
         "name": "Castle in the Sky",
         "rating": 8.5,
         "tags": [
-            "tag:anime/finished",
+            "tag:anime/completed",
             "tag:anime/glibli"
         ],
         "title": "天空の城ラピュタ",
@@ -55,9 +55,9 @@
         "tags": [
             "tag:anime/college",
             "tag:anime/comedy",
+            "tag:anime/pending",
             "tag:anime/recommended",
-            "tag:anime/slice_of_life",
-            "tag:anime/waiting"
+            "tag:anime/slice_of_life"
         ],
         "title": "日々は過ぎれど飯うまし",
         "wiki": "https://en.wikipedia.org/wiki/Food_for_the_Soul"
@@ -71,8 +71,8 @@
         "rating": null,
         "tags": [
             "tag:anime/apocalypse",
-            "tag:anime/slice_of_life",
-            "tag:anime/waiting"
+            "tag:anime/pending",
+            "tag:anime/slice_of_life"
         ],
         "title": "少女終末旅行",
         "wiki": "https://en.wikipedia.org/wiki/Girls%27_Last_Tour"
@@ -87,8 +87,8 @@
         "tags": [
             "tag:anime/comedy",
             "tag:anime/highschool",
-            "tag:anime/slice_of_life",
-            "tag:anime/waiting"
+            "tag:anime/pending",
+            "tag:anime/slice_of_life"
         ],
         "title": "しかのこのこのここしたんた!",
         "wiki": "https://en.wikipedia.org/wiki/Hinako_Note"
@@ -104,8 +104,8 @@
             "tag:anime/band",
             "tag:anime/comedy",
             "tag:anime/highschool",
-            "tag:anime/slice_of_life",
-            "tag:anime/waiting"
+            "tag:anime/pending",
+            "tag:anime/slice_of_life"
         ],
         "title": "けいおん!",
         "wiki": "https://en.wikipedia.org/wiki/K-On!"
@@ -119,7 +119,7 @@
         "rating": 10,
         "tags": [
             "tag:anime/comedy",
-            "tag:anime/finished",
+            "tag:anime/completed",
             "tag:anime/highschool",
             "tag:anime/slice_of_life"
         ],
@@ -136,8 +136,8 @@
         "tags": [
             "tag:anime/comedy",
             "tag:anime/highschool",
-            "tag:anime/slice_of_life",
-            "tag:anime/waiting"
+            "tag:anime/pending",
+            "tag:anime/slice_of_life"
         ],
         "title": "しかのこのこのここしたんた!",
         "wiki": "https://en.wikipedia.org/wiki/My_Deer_Friend_Nokotan"
@@ -150,7 +150,7 @@
         "name": "My Neighbor Totoro",
         "rating": 8,
         "tags": [
-            "tag:anime/finished",
+            "tag:anime/completed",
             "tag:anime/glibli"
         ],
         "title": "となりのトトロ",
@@ -165,7 +165,7 @@
         "rating": 8.5,
         "tags": [
             "tag:anime/comedy",
-            "tag:anime/finished",
+            "tag:anime/completed",
             "tag:anime/highschool",
             "tag:anime/slice_of_life"
         ],
@@ -180,7 +180,7 @@
         "name": "Spirited Away",
         "rating": 9,
         "tags": [
-            "tag:anime/finished",
+            "tag:anime/completed",
             "tag:anime/glibli"
         ],
         "title": "千と千尋の神隠し",
