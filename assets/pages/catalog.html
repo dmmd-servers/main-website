@@ -1,0 +1,401 @@
+<!-- Styles -->
+<style>
+    /* Catalog */
+    #catalog {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0px;
+        justify-content: center;
+        padding: 50px clamp(50px, 10%, 300px);
+    }
+
+    #catalog h1 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #catalog h2 {
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    /* Search */
+    #search {
+        padding: 10px 25px;
+        background-color: var(--sd-mono-200);
+        border: none;
+        border-radius: 10px;
+        width: calc(100% - 50px);
+    }
+
+    /* Guide */
+    #guide {
+        display: flex;
+        gap: 10px 10px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #guide code {
+        color: var(--sd-yellow-800);
+        background-color: var(--sd-mono-200);
+        padding: 1px 5px;
+        border-radius: 5px;
+    }
+
+    /* Tally */
+    #tally {
+        width: 100%;
+    }
+
+    /* List */
+    #list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    #list .item-entry {
+        background-color: var(--sd-mono-200);
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0px;
+    }
+
+    #list .item-generic {
+        padding: 10px 25px;
+    }
+
+    #list .item-detailed {
+        padding: 15px 25px;
+    }
+
+    #list .item-title {
+        color: var(--sd-red-800);
+    }
+
+    #list .item-id {
+        color: var(--sd-mono-800);
+    }
+
+    #list .item-stats {
+        display: flex;
+        gap: 10px 10px;
+    }
+
+    #list .item-stats span {
+        color: var(--sd-mono-800);
+    }
+
+    #list .item-tags {
+        display: flex;
+        gap: 10px 10px;
+    }
+
+    #list .item-tag {
+        background-color: var(--sd-mono-300);
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+</style>
+
+<!-- Catalog -->
+<div id="catalog">
+    <h1>Personal Catalog</h1>
+    <h2>Just a comprehensive list of everything that I have, do, and love!</h2>
+    <input id="search" placeholder="Search in Catalog">
+    <span id="guide">
+        <span>
+            <code>@id</code> to search by id.
+        </span>
+        <span>
+            <code>#tag</code> to search by tag.
+        </span>
+        <span>
+            <code>&{regexp}=</code> to search by snippet using regexp.
+        </span>
+        <span>
+            <code>!sort:begin|end|id|name|title</code> to sort entries.
+        </span>
+        <span>
+            <code>!reverse</code> to rearrange entries.
+        </span>
+        <span>
+            <code>!negative</code> to hide matching entries instead.
+        </span>
+        <span>
+            <code>!strict</code> to require all parameters to be met instead.
+        </span>
+        <span>
+            <code>!sensitive</code> to enforce case sensitive searching on predicates.
+        </span>
+        <span>
+            Press <code>Enter</code> to search.
+        </span>
+    </span>
+    <span id="tally"></span>
+    <div id="list"></div>
+</div>
+
+<!-- Scripts -->
+<script>
+    // Executes script
+    void async function() {
+        // Fetches elements
+        const search = document.getElementById("search");
+        if(search === null) throw new Error("Unable to resolve #search element.");
+        const tally = document.getElementById("tally");
+        if(tally === null) throw new Error("Unable to resolve #tally element.");
+        const list = document.getElementById("list");
+        if(list === null) throw new Error("Unable to resolve #list element.");
+
+        // Fetches data
+        const tags = await (await fetch("/api/data/tags")).json();
+        const anime = await (await fetch("/api/data/anime")).json();
+        const games = await (await fetch("/api/data/games")).json();
+        const data = [
+            ...tags,
+            ...anime,
+            ...games
+        ].sort((a, b) => a.id.localeCompare(b.id));
+        
+        // Creates library
+        const library = new Map();
+        for(let i = 0; i < data.length; i++) {
+            const entry = data[i];
+            library.set(entry.id, entry);
+        }
+
+        // Initializes search
+        search.addEventListener("change", () => populate(sift(search.value)));
+        
+        // Populates initial list
+        populate(data);
+        
+        // Defines catalog handlers
+        function sift(input) {
+            // Defines patterns
+            const patterns = {
+                action: /(?<=(?:^|\s))!(\^?[a-z0-9_/:]*\$?)(?=(?:$|\s))/g,
+                id: /(?<=(?:^|\s))@(\^?[a-z0-9_/:]*\$?)(?=(?:$|\s))/g,
+                snippet: /(?<=(?:^|\s))&{(.*?)}=(?=(?:$|\s))/g,
+                tag: /(?<=(?:^|\s))#(\^?[a-z0-9_/:]*\$?)(?=(?:$|\s))/g
+            };
+
+            // Defines parameters
+            const parameters = {
+                action: Array.from(input.matchAll(patterns.action)).map((match) => match[1]),
+                id: Array.from(input.matchAll(patterns.id)).map((match) => match[1]),
+                snippet: Array.from(input.matchAll(patterns.snippet)).map((match) => match[1]),
+                tag: Array.from(input.matchAll(patterns.tag)).map((match) => match[1])
+            };
+            
+            // Defines predicate
+            const predicate = input
+                .replaceAll(patterns.action, " ")
+                .replaceAll(patterns.id, " ")
+                .replaceAll(patterns.snippet, " ")
+                .replaceAll(patterns.tag, " ")
+                .replaceAll(/\s{2,}/g, " ")
+                .trim();
+
+            // Filters data
+            const pass = !parameters.action.includes("negative");
+            const compare = parameters.action.includes("sensitive") ?
+                (source, target) => source.includes(target) :
+                (source, target) => source.toLowerCase().includes(target.toLowerCase());
+            const union = !parameters.action.includes("strict");
+            const advanced =
+                parameters.action.length +
+                parameters.id.length +
+                parameters.snippet.length +
+                parameters.tag.length;
+            const filtered = data.filter((entry) => {
+                if(predicate.length === 0 && advanced === 0) return pass;
+                for(let i = 0; i < parameters.snippet.length; i++) {
+                    const query = new RegExp(parameters.snippet[i]);
+                    const matched = query.test(JSON.stringify(entry));
+                    if(union && matched) return pass;
+                    if(!union && !matched) return !pass;
+                }
+                for(let i = 0; i < parameters.id.length; i++) {
+                    const query = new RegExp(parameters.id[i]);
+                    const matched = query.test(entry.id);
+                    if(union && matched) return pass;
+                    if(!union && !matched) return !pass;
+                }
+                for(let i = 0; i < ("tags" in entry ? parameters.tag.length : 0); i++) {
+                    const query = new RegExp(parameters.tag[i]);
+                    const matched = entry.tags.some((tag) => query.test(tag));
+                    if(union && matched) return pass;
+                    if(!union && !matched) return !pass;
+                }
+                if(predicate.length > 0) {
+                    const matched = compare(JSON.stringify(entry), predicate);
+                    if(union && matched) return pass;
+                    if(!union && !matched) return !pass;
+                }
+                return union ? !pass : pass;
+            });
+
+            // Sorts data
+            const direction = parameters.action.includes("reverse") ? -1 : 1;
+            const sorts = {
+                "sort:begin": (a, b) => {
+                    const left = "begin" in a ? a.begin : null;
+                    const right = "begin" in b ? b.begin : null;
+                    if(left === null) return -1 * direction;
+                    if(right === null) return 1 * direction;
+                    return left.localeCompare(right) * direction;
+                },
+                "sort:end": (a, b) => {
+                    const left = "end" in a ? a.end : null;
+                    const right = "end" in b ? b.end : null;
+                    if(left === null) return -1 * direction;
+                    if(right === null) return 1 * direction;
+                    return left.localeCompare(right) * direction;
+                },
+                "sort:id": (a, b) => {
+                    const left = a.id;
+                    const right = b.id;
+                    return left.localeCompare(right) * direction; 
+                },
+                "sort:name": (a, b) => {
+                    const left = a.name;
+                    const right = b.name;
+                    return left.localeCompare(right) * direction;
+                },
+                "sort:title": (a, b) => {
+                    const left = "title" in a ? a.title : null;
+                    const right = "title" in b ? b.title : null;
+                    if(left === null) return -1 * direction;
+                    if(right === null) return 1 * direction;
+                    return left.localeCompare(right) * direction;
+                }
+            };
+            const sort = parameters.action.find((parameter) => parameter.startsWith("sort:"));
+            const algorithm = sort in sorts ? sorts[sort] : sorts["sort:id"];
+            const sorted = filtered.sort(algorithm);
+                
+            // Returns result
+            return sorted;
+        }
+        function relate(entries) {
+            // Finds common id group
+            if(entries.length === 0) return null;
+            for(let i = 1; i < entries.length; i++)
+                if(entries[i].id.split(":")[0] !== entries[i - 1].id.split(":")[0]) return null;
+            return entries[0].id.split(":")[0];
+        }
+        function populate(entries) {
+            // Resets list
+            list.innerHTML = "";
+
+            // Updates tally
+            tally.innerText = `${entries.length} result(s) found!`;
+
+            // Populates list
+            const relation = relate(entries);
+            for(let i = 0; i < entries.length; i++) {
+                const entry = entries[i];
+                const [ group, label ] = entry.id.split(":");
+                const item = document.createElement("a");
+                list.appendChild(item);
+                item.href = `/catalog/${group}?label=${label}`;
+                item.classList.add("item-entry");
+                switch(relation ?? (entries.length < 20 ? group : null)) {
+                    case "tag": {
+                        break;
+                    }
+                    case "anime": {
+                        item.innerHTML = `
+                            <div class="item-header">
+                                <span class="item-title">${entry.title}</span>
+                                <span class="item-name">${entry.name}</span>
+                                <span class="item-id">(${entry.id})</span>
+                            </div>
+                            <div>
+                                ${entry.comment ?? "No comment specified."}
+                            </div>
+                            <div class="item-stats">
+                                <span>
+                                    ${
+                                        entry.rating === null ? "No Rating Specified" :
+                                            `Rating: ${entry.rating} / 10`
+                                    }
+                                </span>
+                                <span>
+                                    ${
+                                        entry.begin === null && entry.end === null ? "No Date Specified" :
+                                            entry.begin === null ? `Date: Until ${entry.end}` :
+                                            entry.end === null ? `Date: Since ${entry.begin}` :
+                                            `Date: From ${entry.begin} To ${entry.end}`
+                                    }
+                                </span>
+                            </div>
+                            <div class="item-tags">
+                                ${entry.tags.map((tag) => `
+                                    <a class="item-tag" href="/catalog/tag?label=${tag.split(":")[1]}">
+                                        ${library.get(tag).name}
+                                    </a>
+                                `).join("")}
+                            </div>
+                        `;
+                        item.classList.add("item-detailed");
+                        break;
+                    }
+                    case "game": {
+                        item.innerHTML = `
+                            <div class="item-header">
+                                <span class="item-title">${entry.title}</span>
+                                <span class="item-name">${entry.name}</span>
+                                <span class="item-id">(${entry.id})</span>
+                            </div>
+                            <div>
+                                ${entry.comment ?? "No comment specified."}
+                            </div>
+                            <div class="item-stats">
+                                <span>
+                                    ${
+                                        entry.rating === null ? "No Rating Specified" :
+                                            `Rating: ${entry.rating} / 10`
+                                    }
+                                </span>
+                                <span>
+                                    ${
+                                        entry.begin === null && entry.end === null ? "No Date Specified" :
+                                            entry.begin === null ? `Date: Until ${entry.end}` :
+                                            entry.end === null ? `Date: Since ${entry.begin}` :
+                                            `Date: From ${entry.begin} To ${entry.end}`
+                                    }
+                                </span>
+                            </div>
+                            <div class="item-tags">
+                                ${entry.tags.map((tag) => `
+                                    <a class="item-tag" href="/catalog/tag?label=${tag.split(":")[1]}">
+                                        ${library.get(tag).name}
+                                    </a>
+                                `).join("")}
+                            </div>
+                        `;
+                        item.classList.add("item-detailed");
+                        break;
+                    }
+                    default: {
+                        item.innerHTML = `
+                            <div class="item-header">
+                                <span class="item-name">${entry.name}</span>
+                                <span class="item-id">(${entry.id})</span>
+                            </div>
+                        `;
+                        item.classList.add("item-generic");
+                        break;
+                    }
+                }
+            }
+        }
+    }();
+</script>

@@ -1,7 +1,7 @@
 // Imports
 import nodePath from "node:path";
-import direct from "../core/direct";
-import faults from "../core/faults";
+import direct from "../../core/direct";
+import faults from "../../core/faults";
 
 // Defines route
 export async function route(url: URL, request: Request, server: Bun.Server): Promise<Response> {

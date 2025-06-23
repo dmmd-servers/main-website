@@ -8,6 +8,12 @@ export abstract class GenericFault extends Error {
 }
 
 // Defines implemented faults
+export class MissingApi extends GenericFault {
+    // Defines constructor
+    readonly code: string = "MISSING_API";
+    readonly message: string = "The requested api does not exist.";
+    readonly status: number = 404;
+}
 export class MissingAsset extends GenericFault {
     // Defines constructor
     readonly code: string = "MISSING_ASSET";
@@ -36,6 +42,7 @@ export class ServerFailure extends GenericFault {
 // Exports
 export default {
     GenericFault,
+    MissingApi,
     MissingAsset,
     MissingEndpoint,
     RouteAbort,

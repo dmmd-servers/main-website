@@ -4,25 +4,22 @@ footer {
     flex-wrap: wrap ;
     justify-content: center;
     gap: 50px clamp(100px, 10%, 200px);
-    padding: 100px 40px;
-}
-
-@media screen and (max-width: 500px) {
-    footer {
-        flex-direction: column;
-    }
+    padding: 100px clamp(50px, 10%, 10%);
 }
 
 footer > div {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 10px 0px;
+    min-width: clamp(200px, 15%, 15%);
+}
+
+footer > div a {
+    color: var(--sd-blue-700);
 }
 
 footer > div > span:first-child {
     font-weight: bold;
 }
 
-footer > div a {
-    color: var(--sd-blue-700);
-}

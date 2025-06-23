@@ -26,6 +26,6 @@ a {
     transition: opacity 0.2s ease;
 }
 
-a:hover {
+a:hover:not(:has(a:hover)) {
     opacity: 75%;
 }
