@@ -1,0 +1,39 @@
+# Bunsvr Default Privacy Policy
+
+## Synopsis
+
+This is the default privacy policy for all projects cloned from the Bunsvr template repository.
+
+Below, you will find an exhaustive list of all potential data that Bunsvr may or will collect and utilize to provide service for you, reasons for why and how the data will be processed, and methods of retention or deletion of said data.
+
+Please note that the list will only contain entries that are expected of a default, original, and non-modified version of Bunsvr cloned directly from the official Bunsvr template repository. For more accurate information, please contact the server owner instead.
+
+## Data Collected
+
+By accessing this server, you consent to have the following data collected and processed to provide service for you:
+- Your IP address.
+
+Your data will only be processed locally to assist in debugging and preventing malicious attacks on the server. No data is exposed, shared, exchanged, or sold to any third parties or outside organizations. No data is stored in a permanent log. All data are kept locally in the console only and will be cleared when the server terminates and the console closes.
+
+You may append a Do-Not-Track (DNT) or a Global Privacy Control (Sec-GPC) header to your request to anonymize your data on the server. Please note that this header may not be respected during an ongoing maintenance or emergency to allow examination and repair work.
+
+Because no persistent data is stored, removal may not be applicable in demand of data removal. If you have further concerns in regards to how your data is collected, processed, or stored, please contact the server owner instead.
+
+## General Data Protection Regulation (GDPR)
+
+This server will comply with GDPR as much as possible. Please alert the contributors of Bunsvr if a breach of this policy is found.
+
+## Changes to This Privacy Policy
+
+This privacy policy may change in accordance with the server owner's requirements. The default privacy policy has no services to provide updates to the end users, unfortunately.
+
+## Links
+
+Bunsvr template repository: https://github.com/DmmDGM/bunsvr
+
+## Licensing
+
+Bunsvr is protected under the MIT open-source license.
+
+## Last Updated
+June 23rd, 2025, 01:07 AM EST.

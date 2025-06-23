@@ -3,6 +3,7 @@ import chalk from "chalk";
 import audit from "./core/audit";
 import faults from "./core/faults";
 import project from "./core/project";
+import track from "./core/track";
 
 // Creates server
 const server = Bun.serve({
@@ -32,7 +33,7 @@ const server = Bun.serve({
         }
             
         // Audits access
-        const ip = request.headers.get("CF-Connecting-IP") ?? server.requestIP(request)?.address ?? "unknown";
+        const ip = track.resolveIp(server, request);
         const endpoint = `${request.method} ${url.pathname + url.search}`;
         const status = `${response.status} ${response.ok ? "OK" : "FAILED"}`;
         const body = `${chalk.cyan(ip)} accessed ${chalk.cyan(endpoint)}. (${status})`;
