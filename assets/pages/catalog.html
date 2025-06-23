@@ -209,7 +209,6 @@
                 (source, target) => source.toLowerCase().includes(target.toLowerCase());
             const union = !parameters.action.includes("strict");
             const advanced =
-                parameters.action.length +
                 parameters.id.length +
                 parameters.snippet.length +
                 parameters.tag.length;
@@ -227,11 +226,11 @@
                     if(union && matched) return pass;
                     if(!union && !matched) return !pass;
                 }
-                for(let i = 0; i < ("tags" in entry ? parameters.tag.length : 0); i++) {
+                for(let i = 0; i < parameters.tag.length; i++) {
+                    if(!("tags" in entry)) return !pass;
                     const query = new RegExp(parameters.tag[i]);
-                    const matched = entry.tags.some((tag) => query.test(tag));
-                    if(union && matched) return pass;
-                    if(!union && !matched) return !pass;
+                    if(union && entry.tags.some((tag) => query.test(tag))) return pass;
+                    if(!union && entry.tags.every((tag) => !query.test(tag))) return !pass;
                 }
                 if(predicate.length > 0) {
                     const matched = compare(JSON.stringify(entry), predicate);
@@ -308,6 +307,18 @@
                 item.classList.add("item-entry");
                 switch(relation ?? (entries.length < 20 ? group : null)) {
                     case "tag": {
+                        item.innerHTML = `
+                            <div class="item-header">
+                                <span class="item-name">${entry.name}</span>
+                                <span class="item-id">(${entry.id})</span>
+                            </div>
+                            <div>
+                                <span>
+                                    ${entry.description ?? "No description specified."}
+                                </span>
+                            </div>
+                        `;
+                        item.classList.add("item-detailed");
                         break;
                     }
                     case "anime": {
@@ -318,7 +329,9 @@
                                 <span class="item-id">(${entry.id})</span>
                             </div>
                             <div>
-                                ${entry.comment ?? "No comment specified."}
+                                <span>
+                                    ${entry.comment ?? "No comment specified."}
+                                </span>
                             </div>
                             <div class="item-stats">
                                 <span>
