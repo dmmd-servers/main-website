@@ -1,5 +1,11 @@
+// Imports
+import project from "./project";
+
 // Defines sensitive data handlers
 export function resolveConsent(request: Request): boolean {
+    // Handles override
+    if(project.unmasked) return true;
+    
     // Resolves consent
     const denial =
         request.headers.get("DNT") === "1" ||

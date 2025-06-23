@@ -15,7 +15,7 @@ By accessing this server, you consent to have the following data collected and p
 
 Your data will only be processed locally to assist in debugging and preventing malicious attacks on the server. No data is exposed, shared, exchanged, or sold to any third parties or outside organizations. No data is stored in a permanent log. All data are kept locally in the console only and will be cleared when the server terminates and the console closes.
 
-You may append a Do-Not-Track (DNT) or a Global Privacy Control (Sec-GPC) header to your request to anonymize your data on the server. Please note that this header may not be respected during an ongoing maintenance or emergency to allow examination and repair work.
+You may append a Do-Not-Track (DNT) or a Global Privacy Control (Sec-GPC) header to your request to anonymize your data on the server. Please note that this header may not be respected during an ongoing maintenance or emergency to allow examination and repair work. Efforts in displaying or indicating such behavior should be in accordance with the server owner's policy.
 
 Because no persistent data is stored, removal may not be applicable in demand of data removal. If you have further concerns in regards to how your data is collected, processed, or stored, please contact the server owner instead.
 
@@ -36,4 +36,4 @@ Bunsvr template repository: https://github.com/DmmDGM/bunsvr
 Bunsvr is protected under the MIT open-source license.
 
 ## Last Updated
-June 23rd, 2025, 01:07 AM EST.
+June 23rd, 2025, 01:36 AM EST.

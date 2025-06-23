@@ -21,8 +21,12 @@ bun .
 ## Configuration
 
 ```.env
-# Server port
+# Server port.
 PORT=3000
+
+# Disrespects all privacy consent preferences.
+# Use in case of debugging / maintenance / emergencies.
+UNMASKED=false
 ```
 
 ## Contribution
