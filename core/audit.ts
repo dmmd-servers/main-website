@@ -7,13 +7,6 @@ export function audit(head: string, body: string, style: typeof chalk): void {
     // Fetches now
     const now = new Date();
 
-    // Calculates zone
-    const offset = now.getTimezoneOffset();
-    const polarity = offset > 0 ? "-" : "+";
-    const major = Math.trunc(Math.abs(offset) / 60).toString().padStart(2, "0");
-    const minor = (Math.abs(offset) % 60).toString().padStart(2, "0");
-    const zone = `UTC${polarity}${major}${minor}`;
-
     // Calculates date
     const year = now.getFullYear().toString().padStart(4, "0");
     const month = (now.getMonth() + 1).toString().padStart(2, "0");
@@ -29,7 +22,7 @@ export function audit(head: string, body: string, style: typeof chalk): void {
     const time = `${hour}:${minute}:${second}.${millisecond} ${meridian}`;
     
     // Writes message
-    const message = style(`[${zone} ${date} ${time}] ${head.toUpperCase()} | ${body}\n`);
+    const message = style(`[${date} @ ${time}] ${head.toUpperCase()} | ${body}\n`);
     project.log.write(message);
 }
 

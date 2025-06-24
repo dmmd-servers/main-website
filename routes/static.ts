@@ -12,7 +12,11 @@ export async function route(url: URL, request: Request, server: Bun.Server): Pro
     if(!filepath.startsWith(direct.contents)) throw new faults.RouteAbort();
     const file = Bun.file(filepath);
     if(!(await file.exists())) throw new faults.RouteAbort();
-    return new Response(file);
+    return new Response(file, {
+        headers: {
+            "cache-control": "max-age=86400"
+        }
+    });
 }
 
 // Exports

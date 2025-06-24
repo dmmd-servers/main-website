@@ -1,33 +1,25 @@
-// Imports
-import project from "./project";
-
-// Defines sensitive data handlers
+// Defines privacy handlers
 export function resolveConsent(request: Request): boolean {
-    // Handles override
-    if(project.unmasked) return true;
+    // Checks consent headers
+    if(request.headers.get("DNT") === "1") return false;
+    if(request.headers.get("Sec-GPC") === "1") return false;
     
-    // Resolves consent
-    const denial =
-        request.headers.get("DNT") === "1" ||
-        request.headers.get("Sec-GPC") === "1";
-    const consent = !denial;
-    return consent;
+    // Assumes consent
+    return true;
 }
 export function resolveIp(server: Bun.Server, request: Request): string {
     // Anonymizes do-not-track requests
     const consent = resolveConsent(request);
-    if(!consent) return "$anonymous";
+    if(!consent) return "::anonymous";
 
-    // Resolves cloudflare ips
+    // Resolves ip
     const cloudflareIp = request.headers.get("CF-Connecting-IP");
     if(cloudflareIp !== null) return cloudflareIp;
-
-    // Resolves server ips
     const serverIp = server.requestIP(request);
     if(serverIp !== null) return serverIp.address;
 
     // Returns unknown
-    return "$unknown";
+    return "::unknown";
 }
 
 // Exports

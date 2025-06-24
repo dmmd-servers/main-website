@@ -46,6 +46,8 @@ const server = Bun.serve({
 });
 
 // Audits server
-const lan = `http://localhost:${project.port}/`;
-const body = `Server is now listening on ${chalk.cyan(lan)}.`;
-audit("server", body, chalk.green);
+void function() {
+    const lan = `http://localhost:${project.port}/`;
+    const body = `Server is now listening on ${chalk.cyan(lan)}.`;
+    audit("server", body, chalk.green);
+}();
