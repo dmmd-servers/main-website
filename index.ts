@@ -3,6 +3,7 @@ import chalk from "chalk";
 import audit from "./core/audit";
 import faults from "./core/faults";
 import project from "./core/project";
+import track from "./core/track";
 
 // Creates server
 const server = Bun.serve({
@@ -21,8 +22,14 @@ const server = Bun.serve({
             const error = thrown instanceof Error ? thrown : new Error(String(thrown));
             
             // Audits thrown
-            if(thrown instanceof faults.GenericFault) audit("fault", `${fault.message} (${fault.code})`, chalk.red);
-            else audit("error", `${error.message} (${error.name})`, chalk.red);
+            if(thrown instanceof faults.GenericFault) {
+                const body = `${fault.message} (${fault.code})`;
+                audit("fault", body, chalk.red);
+            }
+            else {
+                const body = `${error.message} (${error.name})`;
+                audit("error", body, chalk.red);
+            }
             
             // Creates response
             response = Response.json({
@@ -32,11 +39,13 @@ const server = Bun.serve({
         }
             
         // Audits access
-        const ip = request.headers.get("CF-Connecting-IP") ?? server.requestIP(request)?.address ?? "unknown";
-        const endpoint = `${request.method} ${url.pathname + url.search}`;
-        const status = `${response.status} ${response.ok ? "OK" : "FAILED"}`;
-        const body = `${chalk.cyan(ip)} accessed ${chalk.cyan(endpoint)}. (${status})`;
-        audit("access", body, response.ok ? chalk.green : chalk.red);
+        {
+            const ip = track.resolveIp(server, request);
+            const endpoint = `${request.method} ${url.pathname + url.search}`;
+            const status = `${response.status} ${response.ok ? "OK" : "FAILED"}`;
+            const body = `${chalk.cyan(ip)} accessed ${chalk.cyan(endpoint)}. (${status})`;
+            audit("access", body, response.ok ? chalk.green : chalk.red);
+        }
 
         // Returns response
         return response;
@@ -45,6 +54,8 @@ const server = Bun.serve({
 });
 
 // Audits server
-const lan = `http://localhost:${project.port}/`;
-const body = `Server is now listening on ${chalk.cyan(lan)}.`;
-audit("server", body, chalk.green);
+{
+    const lan = `http://localhost:${project.port}/`;
+    const body = `Server is now listening on ${chalk.cyan(lan)}.`;
+    audit("server", body, chalk.green);
+}

@@ -21,7 +21,7 @@ bun .
 ## Configuration
 
 ```.env
-# Server port
+# Server port.
 PORT=3000
 ```
 
