@@ -1,22 +1,26 @@
 // Imports
-import nodePath from "node:path";
-import direct from "../core/direct";
-import faults from "../core/faults";
+import direct from "../bunsvr/direct";
+import report from "../bunsvr/report";
+import grabFile from "../library/grabFile";
 
 // Defines route
 export async function route(url: URL, request: Request, server: Bun.Server): Promise<Response> {
-    // Resolves asset
+    // Checks pathname
     const pattern = url.pathname.match(/^\/assets\/(.*)$/);
-    if(pattern === null) throw new faults.RouteAbort();
-    const filepath = nodePath.resolve(direct.assets, pattern[1]!);
-    if(!filepath.startsWith(direct.assets)) throw new faults.MissingAsset();
-    const file = Bun.file(filepath);
-    if(!(await file.exists())) throw new faults.MissingAsset();
-    return new Response(file, {
-        headers: {
-            "cache-control": "max-age=86400"
-        }
-    });
+    if(pattern === null) throw new report.RouteAbort();
+
+    // Grabs file
+    try {
+        const file = await grabFile(pattern[1]!, direct.assets);
+        return new Response(file, {
+            headers: {
+                "cache-control": "max-age=86400"
+            }
+        });
+    }
+    catch {
+        throw new report.MissingAsset();
+    }
 }
 
 // Exports

@@ -1,5 +1,5 @@
 // Imports
-import faults from "../core/faults";
+import faults from "../bunsvr/report";
 
 // Defines subroutes
 const subroutes = [
@@ -10,7 +10,7 @@ const subroutes = [
 
 // Defines route
 export async function route(url: URL, request: Request, server: Bun.Server): Promise<Response> {
-    // Attempts subroutes
+    // Resolves subroutes
     for(let i = 0; i < subroutes.length; i++) {
         try {
             const subroute = subroutes[i]!;

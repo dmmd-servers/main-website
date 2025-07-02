@@ -1,5 +1,5 @@
-// Defines clock handlers
-export function resolveDate(chrono: Date): string {
+// Defines clock formatters
+export function formatDate(chrono: Date = new Date()): string {
     // Resolves date
     const year = chrono.getFullYear().toString().padStart(4, "0");
     const month = (chrono.getMonth() + 1).toString().padStart(2, "0");
@@ -7,7 +7,7 @@ export function resolveDate(chrono: Date): string {
     const date = `${year}-${month}-${day}`;
     return date;
 }
-export function resolveTime(chrono: Date): string {
+export function formatTime(chrono: Date = new Date()): string {
     // Resolves time
     const hour = (chrono.getHours() % 12 || 12).toString().padStart(2, "0");
     const minute = chrono.getMinutes().toString().padStart(2, "0");
@@ -20,6 +20,6 @@ export function resolveTime(chrono: Date): string {
 
 // Exports
 export default {
-    resolveDate,
-    resolveTime
+    formatDate,
+    formatTime
 };
