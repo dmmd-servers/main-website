@@ -7,7 +7,6 @@ export const port = +(process.env.PORT ?? "3000");
 
 // Exports
 export default {
-    basepath,
     log,
     port
 };
