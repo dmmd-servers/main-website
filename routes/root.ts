@@ -1,5 +1,5 @@
 // Imports
-import faults from "../bunsvr/report";
+import faults from "../library/faults";
 
 // Defines subroutes
 const subroutes = [

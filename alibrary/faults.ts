@@ -1,17 +1,7 @@
-// Defines abstract fault
-export abstract class Fault extends Error {
-    abstract readonly code: string;
-    abstract readonly message: string;
-    abstract readonly status: number;
-    readonly name: string = "Fault";
-}
+// Imports
+import Fault from "../bunsvr/fault";
 
 // Defines implemented faults
-export class DoNotTrack extends Fault {
-    readonly code: string = "DO_NOT_TRACK";
-    readonly message: string = "The request asked not to be tracked.";
-    readonly status: number = 500;
-}
 export class MissingAsset extends Fault {
     readonly code: string = "MISSING_ASSET";
     readonly message: string = "The requested asset does not exist.";
@@ -45,8 +35,6 @@ export class ServerFailure extends Fault {
 
 // Exports
 export default {
-    DoNotTrack,
-    Fault,
     MissingAsset,
     MissingDirectory,
     MissingEndpoint,

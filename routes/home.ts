@@ -1,7 +1,7 @@
 // Imports
 import nodePath from "node:path";
-import direct from "../bunsvr/direct";
-import faults from "../bunsvr/report";
+import faults from "../library/faults";
+import paths from "../library/paths";
 
 // Defines route
 export async function route(url: URL, request: Request, server: Bun.Server): Promise<Response> {
@@ -9,7 +9,7 @@ export async function route(url: URL, request: Request, server: Bun.Server): Pro
     if(url.pathname !== "/") throw new faults.RouteAbort();
 
     // Returns page
-    const filepath = nodePath.resolve(direct.root, "./assets/html/index.html");
+    const filepath = nodePath.resolve(paths.root, "./assets/html/index.html");
     const file = Bun.file(filepath);
     return new Response(file);
 }

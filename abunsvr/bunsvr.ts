@@ -2,15 +2,20 @@
 export const contributors = [
     "DmmD GM (DmmDGM)"
 ];
-export const description = "Barebone Bun http/https server template.";
+export const dependencies = [
+    "chalk"
+];
+export const description = "Barebone http/https Bun server template repository.";
+export const engine = "bun";
 export const license = "MIT";
 export const name = "bunsvr";
 export const repository = "https://github.com/DmmDGM/bunsvr";
-export const version = "1.4.0-dev";
+export const version = "1.3.3-dev";
 
 // Exports
 export default {
     contributors,
+    dependencies,
     description,
     license,
     name,
