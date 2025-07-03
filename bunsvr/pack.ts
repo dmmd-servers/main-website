@@ -3,7 +3,7 @@ import type Fault from "./fault";
 
 // Defines response resolvers
 export function resolveEmpty(): Response {
-    // Packs empty
+    // Packs response
     const options = {
         status: 204
     };
@@ -16,14 +16,13 @@ export function resolveFault(fault: Fault): Response {
         code: fault.code,
         message: fault.message
     };
-    const payload = JSON.stringify(data);
     const options = {
         status: fault.status
     };
-    const response = new Response(payload, options);
+    const response = Response.json(data, options);
     return response;
 }
-export function resulveFile(file: Bun.BunFile): Response {
+export function resolveFile(file: Bun.BunFile): Response {
     // Packs file
     const options = {
         headers: {
@@ -35,13 +34,17 @@ export function resulveFile(file: Bun.BunFile): Response {
 }
 export function resolveJSON(data: object): Response {
     // Packs JSON
-    const payload = JSON.stringify(data);
     const options = {
         headers: {
             "cache-control": "max-age=86400"
         }
     };
-    const response = new Response(payload, options);
+    const response = Response.json(data, options);
+    return response;
+}
+export function resolveOK(): Response {
+    // Packs response
+    const response = new Response("OK");
     return response;
 }
 
@@ -49,6 +52,7 @@ export function resolveJSON(data: object): Response {
 export default {
     resolveEmpty,
     resolveFault,
-    resulveFile,
-    resolveJSON
+    resolveFile,
+    resolveJSON,
+    resolveOK,
 };

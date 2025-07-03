@@ -1,26 +1,19 @@
 // Imports
+import grab from "../bunsvr/grab";
+import pack from "../bunsvr/pack";
 import paths from "../library/paths";
-import grab from "../library/grab";
 import faults from "../library/faults";
 
 // Defines route
-export async function route(url: URL, request: Request, server: Bun.Server): Promise<Response> {
+export async function route(server: Bun.Server, request: Request, url: URL): Promise<Response> {
     // Checks pathname
     const pattern = url.pathname.match(/^\/assets\/(.*)$/);
     if(pattern === null) throw new faults.RouteAbort();
 
-    // Grabs file
-    try {
-        const file = await grab.grabFile(pattern[1]!, paths.assets);
-        return new Response(file, {
-            headers: {
-                "cache-control": "max-age=86400"
-            }
-        });
-    }
-    catch {
-        throw new faults.MissingAsset();
-    }
+    // Returns asset
+    const file = await grab.resolveFile(pattern[1]!, paths.assets);
+    if(file === null) throw new faults.MissingAsset();
+    return pack.resolveFile(file);
 }
 
 // Exports

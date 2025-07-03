@@ -4,13 +4,13 @@ import nodePath from "node:path";
 
 // Defines resolvers
 export async function resolveDirectory(dirpath: string, srcpath: string): Promise<string[] | null> {
-    // Resolves absolute path
-    const abspath = nodePath.resolve(srcpath, dirpath);
-    if(!abspath.startsWith(srcpath)) return null;
+    // Resolves destination path
+    const destpath = nodePath.resolve(srcpath, dirpath);
+    if(!destpath.startsWith(srcpath)) return null;
 
-    // Grabs directory
+    // Resolves directory
     try {
-        const content = await nodeFile.readdir(abspath);
+        const content = await nodeFile.readdir(destpath);
         return content;
     }
     catch {
@@ -18,17 +18,15 @@ export async function resolveDirectory(dirpath: string, srcpath: string): Promis
     }
 }
 export async function resolveFile(filepath: string, srcpath: string): Promise<Bun.BunFile | null> {
-    // Resolves absolute path
-    const abspath = nodePath.resolve(srcpath, filepath);
-    if(!abspath.startsWith(srcpath)) return null;
+    // Resolves destination path
+    const destpath = nodePath.resolve(srcpath, filepath);
+    if(!destpath.startsWith(srcpath)) return null;
     
-    // Grabs file
-    const file = Bun.file(abspath);
+    // Resolves file
+    const file = Bun.file(destpath);
     if(!(await file.exists())) return null;
     return file;
 }
-
-
 
 // Exports
 export default {

@@ -1,38 +1,34 @@
 // Imports
+import listen from "./bunsvr/listen";
+import pack from "./bunsvr/pack";
 import inspect from "./library/inspect";
 import project from "./library/project";
 
 // Creates server
-const server = Bun.serve({
-    development: false,
-    error: async (thrown) => {
-        // Resolves access
-        const fault = inspect.inspectFault(thrown);
-        const response = Response.json({
-            code: fault.code,
-            message: fault.message
-        }, fault.status);
-        const access = inspect.inspectAccess(null, null, response, server);
+const server = listen(
+    // Port
+    project.port,
+
+    // Pre-processor
+    async (server, request) => {
+        const ping = inspect.inspectPing(server, request);
+        return ping;
+    },
+
+    // Router
+    project.router,
+
+    // Error handler
+    async (server, request, thrown) => {
+        const fault = inspect.inspectFault(server, request, thrown);
+        const response = pack.resolveFault(fault);
+        return response;
+    },
+
+    // Post-processor
+    async (server, request, response) => {
+        const access = inspect.inspectAccess(server, request, response);
         return access;
-    },
-    fetch: async (request) => {
-        // Resolves access
-        const url: URL = new URL(request.url);
-        try {
-            const response = await project.router(url, request, server);
-            const access = inspect.inspectAccess(url, request, response, server);
-            return access;
-        }
-        catch(thrown) {      
-            const fault = inspect.inspectFault(thrown);
-            const response = Response.json({
-                code: fault.code,
-                message: fault.message
-            }, fault.status);
-            const access = inspect.inspectAccess(url, request, response, server);
-            return access;
-        }
-    },
-    port: project.port
-});
+    }
+);
 inspect.inspectServer(server);

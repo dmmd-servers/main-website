@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-Barebone http/https Bun server template repository.
+Barebone Bun http/https server template.
 
 ## Installation
 
@@ -11,18 +11,8 @@ Barebone http/https Bun server template repository.
 git clone https://github.com/DmmDGM/bunsvr my-project
 cd my-project
 
-# Install packages
+# Install necessary packages
 bun i
-
-# Starts server
-bun .
-```
-
-## Configuration
-
-```.env
-# Server port.
-PORT=3000
 ```
 
 ## Contribution

@@ -3,11 +3,11 @@ import BunSqlite from "bun:sqlite";
 
 // Defines store class
 export class Store<Schema extends Record<string, Buffer | string | number | null>> {
-    // Definse fields
+    // Defines fields
     private readonly database: BunSqlite;
     private readonly table: string;
 
-    // Definse constructor
+    // Defines constructor
     constructor(location: string, table: string) {
         // Initializes fields
         this.database = new BunSqlite(location);
