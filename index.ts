@@ -3,6 +3,7 @@ import listen from "./bunsvr/listen";
 import pack from "./bunsvr/pack";
 import inspect from "./library/inspect";
 import project from "./library/project";
+import router from "./library/router";
 
 // Creates server
 const server = listen(
@@ -16,7 +17,7 @@ const server = listen(
     },
 
     // Router
-    project.router,
+    router,
 
     // Error handler
     async (server, request, thrown) => {
