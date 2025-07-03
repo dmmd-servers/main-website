@@ -5,7 +5,7 @@ import project from "./project";
 // Defines paths
 export const assets = nodePath.resolve(project.basepath, "./assets/");
 export const base = project.basepath;
-export const resources = nodePath.resolve(project.basepath, "./public/");
+export const resources = nodePath.resolve(project.basepath, "./resources/");
 
 // Exports
 export default {
