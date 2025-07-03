@@ -4,12 +4,12 @@ import project from "./project";
 
 // Defines paths
 export const assets = nodePath.resolve(project.basepath, "./assets/");
-export const contents = nodePath.resolve(project.basepath, "./static/");
-export const root = project.basepath;
+export const base = project.basepath;
+export const resources = nodePath.resolve(project.basepath, "./public/");
 
 // Exports
 export default {
     assets,
-    contents,
-    root
+    base,
+    resources
 };

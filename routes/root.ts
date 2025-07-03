@@ -4,7 +4,7 @@ import faults from "../library/faults";
 // Defines subroutes
 const subroutes = [
     await import("./assets"),
-    await import("./static"),
+    await import("./public"),
     await import("./home")
 ].map((imported) => imported.default);
 
