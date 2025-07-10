@@ -12,7 +12,7 @@ It's meant to be a personal template, but you can use it if you want. Just don't
 By the way, feel free to ditch the template. Nothing except everything in `bunsvr/` is required for Bunsvr to execute.
 The `library/` directory is just full of shortcuts and utility methods for my own convenience but is technically unnecessary.
 The `assets/`, `resources/`, and `routes/` directories are exactly what they sound like. They also don't have any special meanings in this framework.
-You can change all of this behavior in the `routes/` directory and `library/router.ts` file.
+You can change all of this behavior in the `routes/` directory and `library/gates.ts` file.
 
 You can also check what Bunsvr version you got in the `bunsvr/bunsvr.ts` file.
 
@@ -82,4 +82,4 @@ Active contributions are welcome.
 
 ---
 
-###### Last Updated: July 10th, 2025, 1:32 AM EST.
+###### Last Updated: July 10th, 2025, 1:49 PM EST.
