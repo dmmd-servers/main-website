@@ -6,7 +6,7 @@ export const description = "Barebone Bun http/https server template.";
 export const license = "MIT";
 export const name = "bunsvr";
 export const repository = "https://github.com/DmmDGM/bunsvr";
-export const version = "1.4.2";
+export const version = "1.4.3-dev";
 
 // Exports
 export default {
