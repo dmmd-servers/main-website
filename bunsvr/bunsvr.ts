@@ -2,7 +2,7 @@
 export const contributors = [
     "DmmD GM (DmmDGM)"
 ];
-export const description = "Barebone Bun http/https server template.";
+export const description = "DmmD's barebone Bun http/https server template.";
 export const license = "MIT";
 export const name = "bunsvr";
 export const repository = "https://github.com/DmmDGM/bunsvr";
