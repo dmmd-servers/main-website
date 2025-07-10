@@ -1,5 +1,5 @@
 // Imports
-import type Fault from "./fault";
+import type Fault from "../bunsvr/fault";
 
 // Defines response resolvers
 export function resolveEmpty(): Response {

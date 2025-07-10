@@ -1,25 +1,22 @@
 // Imports
 import listen from "./bunsvr/listen";
-import pack from "./bunsvr/pack";
+import pack from "./library/pack";
 import inspect from "./library/inspect";
 import project from "./library/project";
 import router from "./library/router";
 
 // Creates server
 const server = listen(
-    // Port
-    project.port,
-
     // Pre-processor
     async (server, request) => {
         const ping = inspect.inspectPing(server, request);
         return ping;
     },
 
-    // Router
+    // Processor
     router,
 
-    // Error handler
+    // Fixer
     async (server, request, thrown) => {
         const fault = inspect.inspectFault(server, request, thrown);
         const response = pack.resolveFault(fault);
@@ -30,6 +27,9 @@ const server = listen(
     async (server, request, response) => {
         const access = inspect.inspectAccess(server, request, response);
         return access;
-    }
+    },
+
+    // Port
+    project.port
 );
 inspect.inspectServer(server);
