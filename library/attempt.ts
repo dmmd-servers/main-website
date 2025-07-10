@@ -1,5 +1,5 @@
-// Defines attempt methods
-export function now<Value>(
+// Defines attempt handlers
+export function execute<Value>(
     invoke: () => Value,
     fallback: Value
 ): Value {
@@ -11,7 +11,7 @@ export function now<Value>(
         return fallback;
     }
 }
-export async function wait<Value>(
+export async function resolve<Value>(
     invoke: () => Value | Promise<Value>,
     fallback: Value
 ): Promise<Value> {
@@ -26,6 +26,6 @@ export async function wait<Value>(
 
 // Exports
 export default {
-    now,
-    wait
+    execute,
+    resolve
 };

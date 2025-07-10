@@ -1,5 +1,5 @@
 // Imports
-import grab from "../bunsvr/grab";
+import grab from "../library/grab";
 import pack from "../bunsvr/pack";
 import faults from "../library/faults";
 import paths from "../library/paths";

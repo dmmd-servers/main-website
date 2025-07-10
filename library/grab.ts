@@ -1,6 +1,7 @@
 // Imports
 import nodeFile from "node:fs/promises";
 import nodePath from "node:path";
+import attempt from "./attempt";
 
 // Defines resolvers
 export async function resolveDirectory(dirpath: string, srcpath: string): Promise<string[] | null> {
@@ -9,13 +10,7 @@ export async function resolveDirectory(dirpath: string, srcpath: string): Promis
     if(!destpath.startsWith(srcpath)) return null;
 
     // Resolves directory
-    try {
-        const content = await nodeFile.readdir(destpath);
-        return content;
-    }
-    catch {
-        return null;
-    }
+    return attempt.resolve(() => nodeFile.readdir(destpath), null);
 }
 export async function resolveFile(filepath: string, srcpath: string): Promise<Bun.BunFile | null> {
     // Resolves destination path
