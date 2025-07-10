@@ -5,8 +5,8 @@ export const contributors = [
 export const description = "DmmD's barebone Bun http/https server template.";
 export const license = "MIT";
 export const name = "bunsvr";
-export const repository = "https://github.com/DmmDGM/bunsvr";
-export const version = "1.4.3-dev";
+export const repository = "https://github.com/dmmd-stuff/bunsvr";
+export const version = "1.4.3";
 
 // Exports
 export default {
