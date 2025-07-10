@@ -43,6 +43,12 @@ export class Store<Key extends string, Value extends Primitive> {
             .get({ "$table": this._table }) as { exists: 0 | 1 };
         return result.exists === 1;
     }
+    wal(): void {
+        // Enables WAL
+        this._database
+            .prepare("PRAGMA journal_mode = WAL")
+            .run();
+    }
 
     // Defines single query methods    
     delete(key: Key): boolean {
