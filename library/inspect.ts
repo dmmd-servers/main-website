@@ -66,13 +66,6 @@ export function inspectFault(
         return new faults.ServerFailure();
     }
 }
-export function inspectPing(
-    server: Bun.Server,
-    request: Request
-): Request {
-    // Inspects ping
-    return request;
-}
 export function inspectServer(
     server: Bun.Server
 ): Bun.Server {
@@ -90,6 +83,5 @@ export function inspectServer(
 export default {
     inspectAccess,
     inspectFault,
-    inspectPing,
     inspectServer
 };
