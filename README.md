@@ -36,7 +36,7 @@ bun .
 
 ```ts
 // Create a server with listen.ts
-import listen from "./bunsvr/listen.ts";
+import listen from "./bunsvr/listen";
 const server = listen(
     // 1. Define your preprocessor
     // Here is where you can process or alter incoming requests or insert your middlewares.
@@ -82,4 +82,4 @@ Active contributions are welcome.
 
 ---
 
-###### Last Updated: July 10th, 2025, 1:29 AM EST.
+###### Last Updated: July 10th, 2025, 1:32 AM EST.
