@@ -2,11 +2,6 @@
 import Fault from "../bunsvr/fault";
 
 // Defines implemented faults
-export class MissingAsset extends Fault {
-    readonly code: string = "MISSING_ASSET";
-    readonly message: string = "The requested asset does not exist.";
-    readonly status: number = 404;
-}
 export class MissingDirectory extends Fault {
     readonly code: string = "MISSING_DIRECTORY";
     readonly message: string = "The requested directory does not exist.";
@@ -35,7 +30,6 @@ export class ServerFailure extends Fault {
 
 // Exports
 export default {
-    MissingAsset,
     MissingDirectory,
     MissingEndpoint,
     MissingFile,
