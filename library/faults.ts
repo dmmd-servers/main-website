@@ -1,34 +1,33 @@
-// Defines abstract fault
-export abstract class GenericFault extends Error {
-    abstract readonly code: string;
-    abstract readonly message: string;
-    abstract readonly status: number;
-    readonly name: string = "Fault";
-}
+// Imports
+import Fault from "../bunsvr/fault";
 
 // Defines implemented faults
-export class MissingApi extends GenericFault {
-    // Defines constructor
-    readonly code: string = "MISSING_API";
-    readonly message: string = "The requested api does not exist.";
-    readonly status: number = 404;
-}
-export class MissingAsset extends GenericFault {
+export class MissingAsset extends Fault {
     readonly code: string = "MISSING_ASSET";
     readonly message: string = "The requested asset does not exist.";
     readonly status: number = 404;
 }
-export class MissingEndpoint extends GenericFault {
+export class MissingDirectory extends Fault {
+    readonly code: string = "MISSING_DIRECTORY";
+    readonly message: string = "The requested directory does not exist.";
+    readonly status: number = 404;
+}
+export class MissingEndpoint extends Fault {
     readonly code: string = "MISSING_ENDPOINT";
     readonly message: string = "The requested endpoint does not exist.";
     readonly status: number = 404;
 }
-export class RouteAbort extends GenericFault {
+export class MissingFile extends Fault {
+    readonly code: string = "MISSING_FILE";
+    readonly message: string = "The requested file does not exist.";
+    readonly status: number = 404;
+}
+export class RouteAbort extends Fault {
     readonly code: string = "ROUTE_ABORT";
     readonly message: string = "Route handler aborted.";
     readonly status: number = 500;
 }
-export class ServerFailure extends GenericFault {
+export class ServerFailure extends Fault {
     readonly code: string = "SERVER_FAILURE";
     readonly message: string = "Internal error occurred.";
     readonly status: number = 500;
@@ -36,10 +35,10 @@ export class ServerFailure extends GenericFault {
 
 // Exports
 export default {
-    GenericFault,
-    MissingApi,
     MissingAsset,
+    MissingDirectory,
     MissingEndpoint,
+    MissingFile,
     RouteAbort,
     ServerFailure
 };
