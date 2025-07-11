@@ -22,7 +22,7 @@ export async function route(server: Bun.Server, request: Request): Promise<Respo
             throw thrown;
         }
     }
-    throw new faults.MissingEndpoint();
+    throw new faults.UnknownEndpoint();
 }
 
 // Exports
