@@ -10,7 +10,7 @@ export async function route(server: Bun.Server, request: Request, url: URL): Pro
     if(url.pathname !== "/") throw new faults.RouteAbort();
 
     // Returns page
-    const file = await grab.resolveFile("html/index.html", paths.assets);
+    const file = await grab.resolveFile("index.html", paths.resources);
     if(file === null) throw new faults.RouteAbort();
     return pack.resolveFile(file);
 }
